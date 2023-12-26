@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { roboto, spaceMono } from './fonts';
 import './globals.css';
 import LogoText from './components/logo/logoText';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,11 +19,17 @@ export default function RootLayout({
       <body className={roboto.className}>
         <header className="h-[90px] bg-white">
           <div className="text- mx-40 flex h-full items-center justify-between px-3">
-            <div className="flex items-center gap-4 ">
+            <div className="flex items-center gap-7">
               <div>
                 <LogoText fontSize={'text-4xl'} />
               </div>
-              <div>Nav Link</div>
+              <div className="flex items-center gap-4 text-lg">
+                <Link href="/all-ads">All Ads</Link>
+                <div className="flex rounded border p-2">
+                  <button className="pr-1">සිංහල</button>
+                  <button className="border-l pl-1">தமிழ்</button>
+                </div>
+              </div>
             </div>
             <div>buttons</div>
           </div>
