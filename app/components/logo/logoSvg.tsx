@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LogoSvg = () => {
-  return <div>LogoSvg</div>;
+  return <div>Logo Svg</div>;
 };
 
 export default LogoSvg;

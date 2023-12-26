@@ -17,11 +17,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <header className="h-[90px] bg-white">
-          <div className="mx-40 flex h-full items-center justify-between px-3">
-            <div>
-              <LogoText />
+          <div className="text- mx-40 flex h-full items-center justify-between px-3">
+            <div className="flex items-center gap-4 ">
+              <div>
+                <LogoText fontSize={'text-4xl'} />
+              </div>
+              <div>Nav Links</div>
             </div>
-            <div>Nav Links</div>
             <div>buttons</div>
           </div>
         </header>
