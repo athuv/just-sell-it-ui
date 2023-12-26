@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { roboto, spaceMono } from './fonts';
+import { roboto } from './fonts';
 import './globals.css';
 import LogoText from './components/logo/logoText';
 import Link from 'next/link';
+import { BiSolidChat, BiSolidUser } from 'react-icons/bi';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -31,7 +32,23 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <div>buttons</div>
+            <div className="flex items-center gap-4">
+              <button className="flex items-center gap-1">
+                <span>
+                  <BiSolidChat className="text-xl text-tertiaryBg" />
+                </span>
+                <span>Chat</span>
+              </button>
+              <button className="flex items-center gap-1">
+                <span>
+                  <BiSolidUser className="text-xl text-tertiaryBg" />
+                </span>
+                <span>Login/Signup</span>
+              </button>
+              <button className="rounded bg-tertiaryBg p-2">
+                POST YOUR AD
+              </button>
+            </div>
           </div>
         </header>
         {children}
