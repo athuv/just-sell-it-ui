@@ -22,7 +22,7 @@ export default function RootLayout({
               <div>
                 <LogoText fontSize={'text-4xl'} />
               </div>
-              <div>Nav Links</div>
+              <div>Nav Link</div>
             </div>
             <div>buttons</div>
           </div>
