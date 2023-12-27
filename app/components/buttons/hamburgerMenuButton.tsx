@@ -13,6 +13,7 @@ const HumburgerMenuButton = ({
   return (
     <>
       <button
+        aria-label="Menu"
         className="absolute left-3 top-[0.85rem] z-10 text-4xl text-tertiaryBg"
         onClick={() => {
           isOpen ? setIsOpen(false) : setIsOpen(true);
