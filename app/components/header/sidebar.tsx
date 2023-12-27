@@ -1,7 +1,13 @@
-import React from 'react';
-import { BiLogIn, BiPurchaseTagAlt } from 'react-icons/bi';
+import React, { Dispatch, SetStateAction } from 'react';
+import { BiLogIn, BiPurchaseTagAlt, BiSolidXCircle } from 'react-icons/bi';
 
-const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
+const Sidebar = ({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
   console.log(isOpen);
   return (
     <aside
@@ -10,6 +16,14 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
       } bg-primaryBg drop-shadow-lg transition-transform duration-500 md:hidden`}
     >
       <div className="flex flex-col items-start px-4 py-1">
+        <button
+          className="self-end pb-1 text-3xl text-tertiaryBg"
+          onClick={() => {
+            isOpen ? setIsOpen(false) : setIsOpen(true);
+          }}
+        >
+          <BiSolidXCircle />
+        </button>
         <button className="flex items-center justify-center gap-2">
           <span className=" text-tertiaryBg">
             <BiPurchaseTagAlt />

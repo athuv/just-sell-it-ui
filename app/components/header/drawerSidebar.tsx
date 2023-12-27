@@ -8,7 +8,7 @@ const DrawerSidebar = () => {
   return (
     <>
       <HumburgerMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Sidebar isOpen={isOpen} />
+      <Sidebar setIsOpen={setIsOpen} isOpen={isOpen} />
     </>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Dispatch, SetStateAction } from 'react';
-import { BiLogIn, BiMenu, BiPurchaseTagAlt } from 'react-icons/bi';
+import { BiMenu } from 'react-icons/bi';
 
 const HumburgerMenuButton = ({
   setIsOpen,
