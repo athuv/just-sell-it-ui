@@ -3,9 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 
 const LogoSvg = () => {
-  const screenWidth = typeof window !== 'undefined' ? window.innerWidth : null;
-
-  console.log(screenWidth);
   return (
     <>
       <div className="md:hidden">

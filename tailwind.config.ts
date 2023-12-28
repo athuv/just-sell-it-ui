@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         primaryBg: '#f5f7fa',
         secondaryBg: '#fff',
-        tertiaryBg: '#f85c70',
+        tertiaryBg: '#c8495a',
         quaternary: '#AAB8C2',
         quinary: '#F5F8FA',
       },

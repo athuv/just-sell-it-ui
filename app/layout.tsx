@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { roboto } from './fonts';
 import './globals.css';
-import Header from './components/header/header';
+import Header from '@/app/components/header/header';
 
 export const metadata: Metadata = {
   title: 'Just Sell It',
