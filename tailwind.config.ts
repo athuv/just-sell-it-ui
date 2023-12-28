@@ -17,7 +17,7 @@ const config: Config = {
         primaryBg: '#f5f7fa',
         secondaryBg: '#fff',
         tertiaryBg: '#c8495a',
-        quaternary: '#AAB8C2',
+        quaternary: '#999',
         quinary: '#F5F8FA',
       },
     },
