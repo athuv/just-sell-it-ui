@@ -12,7 +12,7 @@ const Sidebar = ({
     <aside
       className={`absolute z-0 h-fit w-full ${
         isOpen ? 'translate-y-0' : '-translate-y-48'
-      } bg-primaryBg drop-shadow-lg transition-transform duration-500 md:hidden`}
+      } bg-primaryBg drop-shadow-lg transition-transform duration-500 lg:hidden`}
     >
       <div className="flex flex-col items-start px-4 py-1">
         <button
