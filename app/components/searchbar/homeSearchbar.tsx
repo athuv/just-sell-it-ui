@@ -5,12 +5,19 @@ import React, { useState } from 'react';
 
 const HomeSearchbar = () => {
   const [isLocationOpen, setIsLocationOpen] = useState<boolean>(false);
+  const [selectedArea, setSelectedArea] = useState<string[]>(['0', 'Location']);
 
   return (
     <>
-      <HomeSearchInputContainer setIsLocationOpen={setIsLocationOpen} />
+      <HomeSearchInputContainer
+        selectedArea={selectedArea}
+        setIsLocationOpen={setIsLocationOpen}
+      />
       {isLocationOpen && (
-        <LocationModal setIsLocationOpen={setIsLocationOpen} />
+        <LocationModal
+          setSelectedArea={setSelectedArea}
+          setIsLocationOpen={setIsLocationOpen}
+        />
       )}
     </>
   );

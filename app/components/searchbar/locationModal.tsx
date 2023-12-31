@@ -4,8 +4,10 @@ import React, { Dispatch, SetStateAction, useState } from 'react';
 
 const LocationModal = ({
   setIsLocationOpen,
+  setSelectedArea,
 }: {
   setIsLocationOpen: Dispatch<SetStateAction<boolean>>;
+  setSelectedArea: Dispatch<SetStateAction<string[]>>;
 }) => {
   const [isSelected, setIsSelected] = useState('district');
 
@@ -21,7 +23,10 @@ const LocationModal = ({
           )}
 
           {isSelected === 'area' && (
-            <PopularAreasContent setIsLocationOpen={setIsLocationOpen} />
+            <PopularAreasContent
+              setSelectedArea={setSelectedArea}
+              setIsLocationOpen={setIsLocationOpen}
+            />
           )}
         </div>
       </div>

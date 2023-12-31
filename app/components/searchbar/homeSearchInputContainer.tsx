@@ -3,8 +3,10 @@ import { BiCategoryAlt, BiLocationPlus, BiSearch } from 'react-icons/bi';
 
 const HomeSearchInputContainer = ({
   setIsLocationOpen,
+  selectedArea,
 }: {
   setIsLocationOpen: Dispatch<SetStateAction<boolean>>;
+  selectedArea: string[];
 }) => {
   const handleLocationClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -24,7 +26,7 @@ const HomeSearchInputContainer = ({
           onClick={handleLocationClick}
         >
           <BiLocationPlus />
-          <span>Location</span>
+          <span>{selectedArea[1]}</span>
         </button>
         <button
           aria-label="Category"
