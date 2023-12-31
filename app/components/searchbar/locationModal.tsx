@@ -1,7 +1,6 @@
 import DistrictContent from '@/app/components/searchbar/districtContent';
 import PopularAreasContent from '@/app/components/searchbar/popularAreasContent';
 import React, { Dispatch, SetStateAction, useState } from 'react';
-import { BiSolidXCircle, BiSolidChevronRight } from 'react-icons/bi';
 
 const LocationModal = ({
   setIsLocationOpen,

@@ -1,10 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import {
-  BiCategoryAlt,
-  BiLocationPlus,
-  BiSearch,
-  BiSolidKeyboard,
-} from 'react-icons/bi';
+import { BiCategoryAlt, BiLocationPlus, BiSearch } from 'react-icons/bi';
 
 const HomeSearchInputContainer = ({
   setIsLocationOpen,

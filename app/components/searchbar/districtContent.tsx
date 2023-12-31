@@ -1,6 +1,6 @@
 import ButtonCloseModal from '@/app/components/searchbar/buttonCloseModal';
 import React, { Dispatch, SetStateAction } from 'react';
-import { BiSolidChevronRight, BiSolidXCircle } from 'react-icons/bi';
+import { BiSolidChevronRight } from 'react-icons/bi';
 
 const DistrictContent = ({
   setIsLocationOpen,
