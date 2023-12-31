@@ -5,10 +5,10 @@ import React, { useState } from 'react';
 
 const HomeSearchbar = () => {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false);
-  const [selectedArea, setSelectedArea] = useState<string[]>(['0', 'Location']);
+  const [selectedArea, setSelectedArea] = useState<string[]>(['', 'Location']);
   const [selectedCategory, setSelectedCategory] = useState<string[]>([
-    '0',
-    'Location',
+    '',
+    'Category',
   ]);
   const [isSelected, setIsSelected] = useState('district');
 
