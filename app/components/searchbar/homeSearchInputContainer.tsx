@@ -24,22 +24,37 @@ function SubmitButton() {
 }
 
 const HomeSearchInputContainer = ({
-  setIsLocationOpen,
+  setIsSearchModalOpen,
   selectedArea,
+  setIsSelected,
+  selectedCategory,
 }: {
-  setIsLocationOpen: Dispatch<SetStateAction<boolean>>;
+  setIsSearchModalOpen: Dispatch<SetStateAction<boolean>>;
   selectedArea: string[];
+  setIsSelected: Dispatch<SetStateAction<string>>;
+  selectedCategory: string[];
 }) => {
   const [state, formAction] = useFormState(SearchFormSubmit, initialState);
 
-  const handleLocationClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleLocationButtonClick = (
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
     event.preventDefault();
-    setIsLocationOpen(true);
+    setIsSearchModalOpen(true);
+    setIsSelected('district');
+  };
+
+  const handleCategoryButtonClick = (
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
+    event.preventDefault();
+    setIsSearchModalOpen(true);
+    setIsSelected('category');
   };
 
   return (
     <section className="w-full">
-      <form action={formAction}>
+      <form method="POST" action={formAction}>
         <div
           role="group"
           aria-label="Search"
@@ -48,7 +63,7 @@ const HomeSearchInputContainer = ({
           <button
             aria-label="Location"
             className="flex h-14 w-full items-center justify-start gap-2 border pl-4"
-            onClick={handleLocationClick}
+            onClick={handleLocationButtonClick}
           >
             <BiLocationPlus />
             <span>{selectedArea[1]}</span>
@@ -61,13 +76,20 @@ const HomeSearchInputContainer = ({
             value={selectedArea[0]}
           />
           <button
+            onClick={handleCategoryButtonClick}
             aria-label="Category"
             className="flex h-14 w-full items-center justify-start gap-2 border pl-4"
           >
             <BiCategoryAlt />
-            <span>Category</span>
+            <span>{selectedCategory[1]}</span>
           </button>
-          <input type="text" name="category" readOnly hidden value="123" />
+          <input
+            type="text"
+            name="category"
+            readOnly
+            hidden
+            value={selectedCategory[0]}
+          />
           <div className="relative">
             <input
               name="keyword"

@@ -3,10 +3,10 @@ import React, { Dispatch, SetStateAction } from 'react';
 import { BiSolidChevronRight } from 'react-icons/bi';
 
 const DistrictContent = ({
-  setIsLocationOpen,
+  setIsSearchModalOpen,
   setIsSelected,
 }: {
-  setIsLocationOpen: Dispatch<SetStateAction<boolean>>;
+  setIsSearchModalOpen: Dispatch<SetStateAction<boolean>>;
   setIsSelected: Dispatch<SetStateAction<string>>;
 }) => {
   const sriLankaDistricts = [
@@ -43,29 +43,19 @@ const DistrictContent = ({
   };
 
   return (
-    <div className="flex flex-col flex-nowrap content-center">
-      <div className="flex justify-between">
-        <div>Select District</div>
-        <ButtonCloseModal setIsLocationOpen={setIsLocationOpen} />
-      </div>
-      <div>
-        <div className="pt-4">
-          <ul className="divide-y divide-quaternary text-quaternary">
-            <li></li>
-            {sriLankaDistricts.map((districts, index) => (
-              <li
-                key={index}
-                className="flex items-center justify-between py-2"
-                onClick={handleLiClick}
-              >
-                <span>{districts}</span>
-                <BiSolidChevronRight />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
+    <>
+      <li></li>
+      {sriLankaDistricts.map((districts, index) => (
+        <li
+          key={index}
+          className="flex items-center justify-between py-2"
+          onClick={handleLiClick}
+        >
+          <span>{districts}</span>
+          <BiSolidChevronRight />
+        </li>
+      ))}
+    </>
   );
 };
 

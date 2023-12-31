@@ -1,12 +1,13 @@
-import ButtonCloseModal from '@/app/components/searchbar/buttonCloseModal';
 import React, { Dispatch, SetStateAction } from 'react';
 
-const PopularAreasContent = ({
+const CategoryContent = ({
   setIsSearchModalOpen,
-  setSelectedArea,
+  setIsSelected,
+  setSelectedCategory,
 }: {
   setIsSearchModalOpen: Dispatch<SetStateAction<boolean>>;
-  setSelectedArea: Dispatch<SetStateAction<string[]>>;
+  setIsSelected: Dispatch<SetStateAction<string>>;
+  setSelectedCategory: Dispatch<SetStateAction<string[]>>;
 }) => {
   const handleLiClick = (
     event: React.MouseEvent<HTMLLIElement>,
@@ -14,17 +15,18 @@ const PopularAreasContent = ({
     value: string,
   ) => {
     event.preventDefault();
-    setSelectedArea([id, value]);
+    setSelectedCategory([id, value]);
     setIsSearchModalOpen(false);
   };
+
   return (
     <>
       <li></li>
-      <li onClick={(event) => handleLiClick(event, '2', 'SELECTED LOC')}>
-        Areas
+      <li onClick={(event) => handleLiClick(event, '5', 'SELECTED CAT')}>
+        Category
       </li>
     </>
   );
 };
 
-export default PopularAreasContent;
+export default CategoryContent;

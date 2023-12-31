@@ -1,22 +1,32 @@
 'use client';
 import HomeSearchInputContainer from '@/app/components/searchbar/homeSearchInputContainer';
-import LocationModal from '@/app/components/searchbar/locationModal';
+import SearchModal from '@/app/components/searchbar/searchModal';
 import React, { useState } from 'react';
 
 const HomeSearchbar = () => {
-  const [isLocationOpen, setIsLocationOpen] = useState<boolean>(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false);
   const [selectedArea, setSelectedArea] = useState<string[]>(['0', 'Location']);
+  const [selectedCategory, setSelectedCategory] = useState<string[]>([
+    '0',
+    'Location',
+  ]);
+  const [isSelected, setIsSelected] = useState('district');
 
   return (
     <>
       <HomeSearchInputContainer
         selectedArea={selectedArea}
-        setIsLocationOpen={setIsLocationOpen}
+        selectedCategory={selectedCategory}
+        setIsSearchModalOpen={setIsSearchModalOpen}
+        setIsSelected={setIsSelected}
       />
-      {isLocationOpen && (
-        <LocationModal
+      {isSearchModalOpen && (
+        <SearchModal
           setSelectedArea={setSelectedArea}
-          setIsLocationOpen={setIsLocationOpen}
+          setSelectedCategory={setSelectedCategory}
+          setIsSearchModalOpen={setIsSearchModalOpen}
+          setIsSelected={setIsSelected}
+          isSelected={isSelected}
         />
       )}
     </>

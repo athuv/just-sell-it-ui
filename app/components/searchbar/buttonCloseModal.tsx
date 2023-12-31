@@ -2,15 +2,15 @@ import React, { Dispatch, SetStateAction } from 'react';
 import { BiSolidXCircle } from 'react-icons/bi';
 
 const ButtonCloseModal = ({
-  setIsLocationOpen,
+  setIsSearchModalOpen,
 }: {
-  setIsLocationOpen: Dispatch<SetStateAction<boolean>>;
+  setIsSearchModalOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   const handleLocationCloseClick = (
     event: React.MouseEvent<HTMLButtonElement>,
   ) => {
     event.preventDefault();
-    setIsLocationOpen(false);
+    setIsSearchModalOpen(false);
   };
 
   return (
