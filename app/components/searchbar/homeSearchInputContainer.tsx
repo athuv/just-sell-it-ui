@@ -132,7 +132,7 @@ const HomeSearchInputContainer = ({
               {...register('keyword')}
               aria-label="Search Keyword"
               placeholder="Keyword"
-              className="placeholder:pl-15 h-14 w-full border bg-primaryBg bg-[url('/keyboard-icon.svg')]  bg-[1.1rem] bg-no-repeat pl-10 placeholder:text-quaternary"
+              className="placeholder:pl-15 h-14 w-full border bg-primaryBg bg-[url('/keyboard-icon.svg')] bg-[1.1rem]  bg-no-repeat pl-10 placeholder:text-quaternary autofill:bg-[url('/keyboard-icon.svg')]"
               type="text"
             />
             <ErrorMessage>{state?.message.keyword}</ErrorMessage>
