@@ -1,5 +1,6 @@
+import SearchInput from '@/app/components/searchComponent/searchInput';
 import React from 'react';
-import { BiSearch, BiSolidLocationPlus } from 'react-icons/bi';
+import { BiSolidLocationPlus } from 'react-icons/bi';
 
 function SearchComponent() {
   return (
@@ -17,23 +18,7 @@ function SearchComponent() {
               <input readOnly hidden value="" />
             </button>
           </div>
-          <div className="w-full">
-            <div className="flex h-11 items-center justify-center">
-              <input
-                type="text"
-                className="box-border h-full w-full rounded-l-3xl pl-4 focus:outline-none"
-              />
-              <div className="flex h-full w-12 items-center justify-center rounded-r-3xl bg-primaryBg">
-                <button
-                  type="button"
-                  aria-label="submit search"
-                  className="rounded-full bg-tertiaryBg p-2 text-xl"
-                >
-                  <BiSearch />
-                </button>
-              </div>
-            </div>
-          </div>
+          <SearchInput />
         </div>
       </form>
     </div>
