@@ -4,7 +4,7 @@ import React from 'react';
 
 function SearchComponent() {
   return (
-    <div className="flex h-64 w-full flex-col items-center justify-center bg-tertiaryBg px-4">
+    <div className="flex h-48 w-full flex-col items-center justify-center bg-tertiaryBg px-4">
       <form className="w-full">
         <div className="flex flex-col items-center justify-center gap-4">
           <div>
