@@ -6,6 +6,8 @@ function SearchInput() {
     <div className="w-full">
       <div className="flex h-11 items-center justify-center">
         <input
+          placeholder="Keyword"
+          aria-label="Search Keyword"
           type="text"
           className="box-border h-full w-full rounded-l-3xl pl-4 focus:outline-none"
         />
