@@ -63,23 +63,28 @@ function CategoryBrowserComponent() {
 
   return (
     <section className="flex w-full justify-center pt-4">
-      <div className="flex h-48 w-full flex-col bg-primaryBg p-4">
+      <div className="flex h-48 w-full flex-col bg-primaryBg p-4 md:h-full md:bg-transparent md:px-40">
         <div className="flex justify-between">
           <h1 className="font-bold">Browse Items By Category</h1>
           <span>See All</span>
         </div>
         <div className="h-full">
-          <ul className="flex snap-x snap-mandatory snap-start items-center gap-2 overflow-x-scroll">
+          <ul className="flex snap-x snap-mandatory snap-start items-center gap-2 overflow-x-scroll md:flex-wrap md:justify-center md:gap-0 md:space-y-4 md:overflow-auto">
             {categories.map((category) => (
               <li
                 key={category.id}
-                className="flex w-full items-center justify-center"
+                className="flex w-full items-center justify-center md:w-1/4 md:items-start md:justify-start"
               >
-                <Link href="/" className="flex flex-shrink-0 flex-col p-4">
+                <Link
+                  href="/"
+                  className="flex flex-shrink-0 flex-col items-center justify-center p-4 md:flex-row"
+                >
                   <div className="flex items-center justify-center">
-                    <div className="m-3 h-9 w-9 text-5xl">{category.icon}</div>
+                    <div className="m-3 flex h-14 w-14 items-center justify-center text-5xl">
+                      {category.icon}
+                    </div>
                   </div>
-                  <div className="flex flex-col items-center justify-center">
+                  <div className="flex flex-col items-center justify-center md:items-start">
                     <p className="whitespace-nowrap text-quaternary">
                       {category.name}
                     </p>
