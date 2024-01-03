@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="149.815 220.0244 121.9149 32.0021" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Space Mono">@import url(https://fonts.googleapis.com/css2?family=Space+Mono%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400%3B1%2C700&amp;display=swap);</style>
+  </defs>
+  <text style="fill: rgb(0, 116, 186); font-family: 'Space Mono'; font-size: 21.4px; font-weight: 700; white-space: pre;" transform="matrix(1, 0, 0, 1, 7.105427357601002e-15, 7.105427357601002e-15)"><tspan x="166.973" y="244.026">Just</tspan><tspan style="font-weight: 400;">Jobs</tspan></text>
+  <path style="stroke: rgb(0, 0, 0); fill: rgb(0, 116, 186); paint-order: stroke;" d="M 165.746 230.545 L 165.746 243.413 L 149.815 237.898 L 165.746 230.545 Z" transform="matrix(1, 0, 0, 1, 7.105427357601002e-15, 7.105427357601002e-15)"/>
+</svg>

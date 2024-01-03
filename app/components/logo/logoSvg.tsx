@@ -1,8 +1,9 @@
 'use client';
+
 import React from 'react';
 import Image from 'next/image';
 
-const LogoSvg = () => {
+function LogoSvg() {
   return (
     <>
       <div className="md:hidden">
@@ -13,6 +14,6 @@ const LogoSvg = () => {
       </div>
     </>
   );
-};
+}
 
 export default LogoSvg;

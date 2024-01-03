@@ -1,9 +1,9 @@
 import React from 'react';
-import { BiPlus, BiSolidChat, BiSolidUser } from 'react-icons/bi';
+import { BiSolidChat, BiSolidUser } from 'react-icons/bi';
 import DrawerSidebar from '@/app/components/header/drawerSidebar';
 import LogoSvg from '@/app/components/logo/logoSvg';
 
-const Header = () => {
+function Header() {
   return (
     <>
       <header className="relative z-10 h-16 bg-white">
@@ -14,6 +14,7 @@ const Header = () => {
           </div>
           <div className="flex gap-2 text-2xl text-tertiaryBg lg:gap-6">
             <button
+              type="button"
               aria-label="Chat"
               className="flex items-center justify-center gap-1 text-lg"
             >
@@ -21,6 +22,7 @@ const Header = () => {
               <span className="hidden lg:inline-block">Chat</span>
             </button>
             <button
+              type="button"
               aria-label="Login or Register"
               className="flex items-center justify-center gap-1 text-lg"
             >
@@ -28,6 +30,7 @@ const Header = () => {
               <span className="hidden lg:inline-block">Login/Register</span>
             </button>
             <button
+              type="button"
               aria-label="Post Your Advertisement"
               className="hidden items-center justify-center gap-1 rounded-2xl bg-tertiaryBg p-1 px-3 text-lg text-secondaryBg lg:flex"
             >
@@ -39,6 +42,6 @@ const Header = () => {
       <DrawerSidebar />
     </>
   );
-};
+}
 
 export default Header;
