@@ -1,4 +1,5 @@
 import PostAdandJob from '@/app/(home)/postAdandJob';
+import Quicklinks from '@/app/(home)/quicklinks';
 import CategoryBrowserComponent from '@/app/components/categoryBrowser/categoryBrowserComponent';
 import SearchComponent from '@/app/components/searchComponent/searchComponent';
 
@@ -10,6 +11,7 @@ export default function Home() {
       </section>
       <CategoryBrowserComponent />
       <PostAdandJob />
+      <Quicklinks />
     </main>
   );
 }

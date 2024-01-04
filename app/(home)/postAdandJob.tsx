@@ -7,7 +7,7 @@ function PostAdandJob() {
   return (
     <section className="w-full">
       <div className="flex w-full flex-col items-center justify-center gap-2 px-4 pt-4 md:flex-row md:gap-0 md:px-40">
-        <div className="flex w-full items-center justify-center rounded-md bg-primaryBg shadow-sm md:h-48 md:border-r">
+        <div className="flex w-full items-center justify-center rounded-md bg-primaryBg shadow-md md:h-48 md:border-r">
           <div className="flex flex-col items-center justify-center p-4 md:flex-row">
             <div className="text-9xl">
               <FcMoneyTransfer />
@@ -38,7 +38,7 @@ function PostAdandJob() {
             </div>
           </div>
         </div>
-        <div className="flex w-full items-center justify-center rounded-md bg-primaryBg shadow-sm md:h-48">
+        <div className="flex w-full items-center justify-center rounded-md bg-primaryBg shadow-md md:h-48">
           <div className="flex flex-col items-center justify-center p-4">
             <div className="flex items-center justify-center">
               <Image

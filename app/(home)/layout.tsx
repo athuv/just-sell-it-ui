@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Header from '@/app/components/header/header';
 import { roboto } from '../fonts';
 import '@/app/globals.css';
+import Footer from '@/app/components/footer/footer';
 
 export const metadata: Metadata = {
   title: 'Just Sell It',
@@ -18,7 +19,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <Header />
         {children}
-        <footer>a</footer>
+        <Footer />
       </body>
     </html>
   );
