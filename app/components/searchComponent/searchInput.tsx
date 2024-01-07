@@ -15,7 +15,7 @@ function SearchInput() {
           <button
             type="submit"
             aria-label="submit search"
-            className="rounded-full bg-tertiaryBg p-2 text-xl md:text-3xl"
+            className="rounded-full bg-tertiaryBg p-2 text-xl text-primaryBg md:text-3xl"
           >
             <BiSearch />
           </button>
