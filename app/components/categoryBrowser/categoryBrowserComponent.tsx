@@ -1,63 +1,84 @@
 import Link from 'next/link';
 import React from 'react';
-import {
-  FcAutomotive,
-  FcCustomerSupport,
-  FcFactory,
-  FcHome,
-  FcLandscape,
-  FcMultipleCameras,
-  FcPhoneAndroid,
-  FcSportsMode,
-} from 'react-icons/fc';
+import Image from 'next/image';
 
 function CategoryBrowserComponent() {
   interface Category {
     id: string;
     name: string;
-    icon: React.ReactNode;
+    icon: string;
   }
 
   const categories: Category[] = [
     {
       id: '1',
       name: 'Electronics',
-      icon: <FcPhoneAndroid />,
+      icon: 'phone-android.svg',
     },
     {
       id: '2',
       name: 'Property',
-      icon: <FcHome />,
+      icon: 'property.svg',
     },
     {
       id: '4',
       name: 'Vechicles',
-      icon: <FcAutomotive />,
+      icon: 'vechicles.svg',
     },
     {
       id: '5',
       name: 'Home & Garden',
-      icon: <FcLandscape />,
+      icon: 'home-and-garden.svg',
     },
     {
       id: '6',
       name: 'Services',
-      icon: <FcCustomerSupport />,
+      icon: 'services.svg',
     },
     {
       id: '7',
       name: 'Business & Industry',
-      icon: <FcFactory />,
+      icon: 'business-and-industry.svg',
     },
     {
       id: '8',
       name: 'Hobby, Sports & Kids',
-      icon: <FcSportsMode />,
+      icon: 'hobby-sports-kids.svg',
     },
     {
       id: '9',
       name: 'Vechicles',
-      icon: <FcMultipleCameras />,
+      icon: 'jobs.svg',
+    },
+    {
+      id: '10',
+      name: 'Animals',
+      icon: 'animals.svg',
+    },
+    {
+      id: '11',
+      name: 'Fashion & Beauty',
+      icon: 'fashion-and-beauty.svg',
+    },
+    {
+      id: '12',
+      name: 'Education',
+      icon: 'education.svg',
+    },
+    {
+      id: '13',
+      name: 'Other',
+      icon: 'other.svg',
+    },
+    {
+      id: '14',
+      name: 'Essentials',
+      icon: 'essentials.svg',
+    },
+    {
+      id: '15',
+      name: 'Agriculture',
+      icon: 'agriculture.svg',
     },
   ];
 
@@ -81,7 +102,12 @@ function CategoryBrowserComponent() {
                 >
                   <div className="flex items-center justify-center md:items-start">
                     <div className="m-3 flex h-14 w-14 items-center justify-center text-5xl">
-                      {category.icon}
+                      <Image
+                        src={category.icon}
+                        alt={category.name}
+                        height={800}
+                        width={800}
+                      />
                     </div>
                   </div>
                   <div className="flex flex-col items-center justify-center md:items-start">
