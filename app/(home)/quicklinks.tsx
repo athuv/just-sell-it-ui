@@ -4,7 +4,7 @@ import React from 'react';
 function Quicklinks() {
   return (
     <section className="w-full">
-      <div className="md:px-40">
+      <div className="lg:px-40">
         <div className="mt-4 w-full bg-primaryBg p-4 shadow-md">
           <h1 className="font-bold">Quick Links</h1>
           <div className="flex gap-2">

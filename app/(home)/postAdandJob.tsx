@@ -6,7 +6,7 @@ import { BiChevronRightCircle } from 'react-icons/bi';
 function PostAdandJob() {
   return (
     <section className="w-full">
-      <div className="flex w-full flex-col items-center justify-center gap-2 px-4 pt-4 md:flex-row md:gap-0 md:px-40">
+      <div className="flex w-full flex-col items-center justify-center gap-2 px-4 pt-4 md:flex-row md:gap-0 lg:px-40">
         <div className="flex w-full items-center justify-center rounded-md bg-primaryBg shadow-md md:h-48 md:border-r">
           <div className="flex flex-col items-center justify-center p-4 md:flex-row">
             <div className="text-9xl">

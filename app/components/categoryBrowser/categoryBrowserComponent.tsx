@@ -69,17 +69,23 @@ function CategoryBrowserComponent() {
           <span>See All</span>
         </div>
         <div className="h-full">
-          <ul className="flex snap-x snap-mandatory overflow-x-scroll">
+          <ul className="flex snap-x snap-mandatory overflow-x-scroll md:flex-wrap md:overflow-x-hidden">
             {categories.map((category) => (
-              <li key={category.id} className="flex snap-start items-center">
-                <Link href="/" className="flex flex-shrink-0 flex-col p-4">
-                  <div className="flex items-center justify-center">
+              <li
+                key={category.id}
+                className="flex snap-start items-center md:w-1/4"
+              >
+                <Link
+                  href="/"
+                  className="flex flex-shrink-0 flex-col p-4 md:flex-shrink md:flex-row"
+                >
+                  <div className="flex items-center justify-center md:items-start">
                     <div className="m-3 flex h-14 w-14 items-center justify-center text-5xl">
                       {category.icon}
                     </div>
                   </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <p className="whitespace-nowrap text-quaternary">
+                  <div className="flex flex-col items-center justify-center md:items-start">
+                    <p className="whitespace-nowrap text-quaternary md:whitespace-normal">
                       {category.name}
                     </p>
                     <span className="text-xs text-quaternary">123, 123</span>
