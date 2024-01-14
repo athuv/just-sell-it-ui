@@ -1,7 +1,11 @@
-import Link from 'next/link';
+import { Dispatch, SetStateAction } from 'react';
 import { BiChevronRight } from 'react-icons/bi';
 
-function DistrictContent() {
+function DistrictContent({
+  setDistrict,
+}: {
+  setDistrict: Dispatch<SetStateAction<string[] | undefined>>;
+}) {
   const sriLankaDistricts = [
     'Ampara',
     'Anuradhapura',
@@ -37,17 +41,18 @@ function DistrictContent() {
   return (
     <div className=" p-4 text-quaternary">
       {sriLankaDistricts.map((district, index) => (
-        <Link
-          href={`/?showLocation=true&district=${index}`}
+        <button
+          type="button"
           className="flex w-full justify-between border-b py-3"
           // eslint-disable-next-line react/no-array-index-key
           key={index}
+          onClick={() => setDistrict([index.toString(), district])}
         >
           <span>{district}</span>
           <span className="text-2xl">
             <BiChevronRight />
           </span>
-        </Link>
+        </button>
       ))}
     </div>
   );
