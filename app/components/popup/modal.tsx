@@ -1,4 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
+import { createPortal } from 'react-dom';
 import { BiSolidXCircle } from 'react-icons/bi';
 
 function Modal({
@@ -8,7 +9,7 @@ function Modal({
   children: React.ReactNode;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
-  return (
+  return createPortal(
     <div className="fixed left-0 top-0 z-20 flex h-full w-screen flex-col justify-center bg-black bg-opacity-50">
       <div className="m-4 flex h-full overflow-hidden md:justify-center">
         <div className="relative block w-full overflow-y-auto rounded-xl bg-primaryBg p-4 outline-none md:w-[800px]">
@@ -16,7 +17,9 @@ function Modal({
             type="button"
             aria-label="Close Modal"
             className="float-right text-3xl"
-            onClick={() => setIsModalOpen(false)}
+            onClick={() => {
+              setIsModalOpen(false);
+            }}
           >
             <BiSolidXCircle />
           </button>
@@ -25,7 +28,8 @@ function Modal({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById('modal-root')!,
   );
 }
 
