@@ -1,28 +1,11 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import Link from 'next/link';
 
-function AreaContent({
-  setSelectedArea,
-  setIsModalOpen,
-}: {
-  setSelectedArea: Dispatch<SetStateAction<string[]>>;
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-}) {
-  function handleAreaClick(id: string, area: string) {
-    setSelectedArea([id, area]);
-    setIsModalOpen(false);
-  }
-
+function AreaContent() {
   return (
     <ul className="p-4 text-quaternary">
-      <button
-        type="button"
-        key="1"
-        onClick={() => {
-          handleAreaClick('1', 'LOC');
-        }}
-      >
+      <Link href="/?area=Kandy" role="button" key="1">
         ABCDE
-      </button>
+      </Link>
     </ul>
   );
 }
