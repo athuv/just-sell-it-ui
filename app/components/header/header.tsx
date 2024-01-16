@@ -1,7 +1,8 @@
 import React from 'react';
-import { BiSolidChat, BiSolidUser } from 'react-icons/bi';
+import { BiSolidChat } from 'react-icons/bi';
 import DrawerSidebar from '@/app/components/header/drawerSidebar';
 import LogoSvg from '@/app/components/logo/logoSvg';
+import ButtonLoginRegisterNavbar from '@/app/components/buttons/buttonLoginRegisterNavbar';
 
 function Header() {
   return (
@@ -21,14 +22,7 @@ function Header() {
               <BiSolidChat />
               <span className="hidden lg:inline-block">Chat</span>
             </button>
-            <button
-              type="button"
-              aria-label="Login or Register"
-              className="flex items-center justify-center gap-1 text-lg"
-            >
-              <BiSolidUser />
-              <span className="hidden lg:inline-block">Login/Register</span>
-            </button>
+            <ButtonLoginRegisterNavbar />
             <button
               type="button"
               aria-label="Post Your Advertisement"
