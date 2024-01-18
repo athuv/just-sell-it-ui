@@ -12,7 +12,11 @@ function ButtonLoginRegisterNavbar() {
         type="button"
         aria-label="Login or Register"
         className="flex items-center justify-center gap-1 text-lg"
-        onClick={() => setIsModalOpen(true)}
+        onClick={() => {
+          setIsModalOpen(true);
+          document.body.style.overflow = 'hidden';
+          document.body.setAttribute('aria-hidden', 'true');
+        }}
       >
         <BiSolidUser />
         <span className="hidden lg:inline-block">Login/Register</span>

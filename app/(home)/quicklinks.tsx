@@ -3,7 +3,7 @@ import React from 'react';
 
 function Quicklinks() {
   return (
-    <section className="w-full">
+    <section role="contentinfo" aria-label="quick links" className="w-full">
       <div className="lg:px-40">
         <div className="mt-4 w-full bg-primaryBg p-4 shadow-md">
           <h1 className="font-bold">Quick Links</h1>

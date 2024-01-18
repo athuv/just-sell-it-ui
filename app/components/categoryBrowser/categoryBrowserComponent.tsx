@@ -83,11 +83,18 @@ function CategoryBrowserComponent() {
   ];
 
   return (
-    <section className="flex w-full justify-center pt-4">
+    <section
+      aria-label="browse items by category"
+      className="flex w-full justify-center pt-4"
+    >
       <div className="flex h-48 w-full flex-col bg-primaryBg p-4 shadow-md md:h-full md:bg-transparent md:px-4 md:shadow-none lg:px-40">
         <div className="flex justify-between">
-          <h1 className="font-bold">Browse Items By Category</h1>
-          <span>See All</span>
+          <h1 aria-label="browse items by category" className="font-bold">
+            Browse Items By Category
+          </h1>
+          <button type="button" aria-label="see all advertisement">
+            See All
+          </button>
         </div>
         <div className="h-full">
           <ul className="flex snap-x snap-mandatory overflow-x-scroll md:flex-wrap md:overflow-x-hidden">

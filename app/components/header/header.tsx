@@ -7,7 +7,11 @@ import ButtonLoginRegisterNavbar from '@/app/components/buttons/buttonLoginRegis
 function Header() {
   return (
     <>
-      <header className="relative z-10 h-16 bg-white">
+      <header
+        role="banner"
+        aria-label="Global Navigation"
+        className="relative z-10 h-16 bg-white"
+      >
         <div className="flex h-full items-center justify-between overflow-hidden border-b-2 border-tertiaryBg px-4 py-1 pl-12 lg:mx-40 lg:border-none lg:px-3">
           <div className="flex items-center gap-2">
             <LogoSvg />

@@ -10,7 +10,7 @@ function Modal({
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return createPortal(
-    <div className="fixed left-0 top-0 z-20 flex h-full w-screen flex-col justify-center bg-black bg-opacity-50">
+    <div className="fixed left-0 top-0 z-20 flex h-full w-screen flex-col justify-center overflow-hidden overflow-x-hidden bg-black bg-opacity-50">
       <div className="m-4 flex h-full overflow-hidden md:justify-center">
         <div className="relative block w-full overflow-y-auto rounded-xl bg-primaryBg p-4 outline-none md:w-[800px]">
           <div className="text-right">
@@ -20,6 +20,7 @@ function Modal({
               className="text-3xl"
               onClick={() => {
                 setIsModalOpen(false);
+                document.body.style.overflow = 'visible';
               }}
             >
               <BiSolidXCircle />

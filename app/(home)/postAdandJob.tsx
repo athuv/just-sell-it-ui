@@ -5,14 +5,20 @@ import { BiChevronRightCircle } from 'react-icons/bi';
 
 function PostAdandJob() {
   return (
-    <section className="w-full">
+    <section
+      aria-label="Promote Your Advertisements and Hiring Options"
+      className="w-full"
+    >
       <div className="flex w-full flex-col items-center justify-center gap-2 px-4 pt-4 md:flex-row md:gap-0 lg:px-40">
-        <div className="flex w-full items-center justify-center rounded-md bg-primaryBg shadow-md md:h-48 md:border-r">
+        <div
+          role="contentinfo"
+          aria-label="Promote your advertisements"
+          className="flex w-full items-center justify-center rounded-md bg-primaryBg shadow-md md:h-48 md:border-r"
+        >
           <div className="flex flex-col items-center justify-center p-4 md:flex-row">
             <div className="text-9xl">
               <FcMoneyTransfer />
             </div>
-
             <div className="mb-1 flex flex-col items-center justify-center">
               <div>
                 <h1 className="text-xl font-bold">Start Making Money!</h1>
@@ -38,7 +44,11 @@ function PostAdandJob() {
             </div>
           </div>
         </div>
-        <div className="flex w-full items-center justify-center rounded-md bg-primaryBg shadow-md md:h-48">
+        <div
+          role="contentinfo"
+          aria-label="Promote Your Job or Vacancies"
+          className="flex w-full items-center justify-center rounded-md bg-primaryBg shadow-md md:h-48"
+        >
           <div className="flex flex-col items-center justify-center p-4">
             <div className="flex items-center justify-center">
               <Image
@@ -60,7 +70,7 @@ function PostAdandJob() {
               <button
                 type="button"
                 className="flex items-center justify-center gap-2 rounded-full bg-[#0074ba] p-2 pl-4 font-bold text-primaryBg"
-                aria-label="Post your ad for free"
+                aria-label="explore jobs"
               >
                 <span>Explore More</span>
                 <span className="text-2xl">

@@ -16,7 +16,10 @@ function ButtonAllLocation() {
         aria-label="Select Location"
         type="button"
         className="flex items-center justify-center gap-2 rounded-md bg-quinary p-2 text-lg text-primaryBg"
-        onClick={() => setIsModalOpen(true)}
+        onClick={() => {
+          setIsModalOpen(true);
+          document.body.style.overflow = 'hidden';
+        }}
       >
         <BiSolidLocationPlus />
         <span>{selectedArea ? selectedArea[1] : 'ALL LOCATION'}</span>

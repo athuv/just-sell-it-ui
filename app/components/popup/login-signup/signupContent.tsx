@@ -8,7 +8,11 @@ function SignupContent({
   setContent: Dispatch<SetStateAction<string>>;
 }) {
   return (
-    <div className="flex flex-col gap-4">
+    <div
+      role="contentinfo"
+      aria-label="signup form"
+      className="flex flex-col gap-4"
+    >
       <div className="flex justify-center">
         <div className="flex flex-col items-center">
           <h1 className="text-xl font-bold md:text-4xl">Welcome to J-S-I</h1>

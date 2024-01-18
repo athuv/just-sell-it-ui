@@ -5,7 +5,11 @@ import Link from 'next/link';
 
 function Footer() {
   return (
-    <footer className="border-t-2 border-tertiaryBg">
+    <footer
+      role="contentinfo"
+      aria-label="footer"
+      className="border-t-2 border-tertiaryBg"
+    >
       <div className="flex flex-col items-center justify-center px-4 lg:items-start lg:divide-y-2 xl:px-40">
         <div className="flex items-stretch justify-between py-4 md:flex-col lg:w-full lg:flex-row lg:gap-10">
           <div className="flex flex-col items-center justify-center divide-y divide-quaternary lg:divide-y-0">
@@ -13,26 +17,38 @@ function Footer() {
               <h1 className="text-center font-bold">Download Our App</h1>
               <div className="flex items-center justify-center">
                 <div className="flex items-center justify-center">
-                  <Image
-                    src="/google-play-badge.png"
-                    alt="Get it on google play store"
-                    height={646}
-                    width={250}
-                    style={{ height: '66px', width: 'auto' }}
-                  />
-                  <Image
-                    src="download-on-the-app-store.svg"
-                    alt="Get it on google play store"
-                    height={40}
-                    width={119.66407}
-                    style={{ height: '45px', width: 'auto' }}
-                  />
+                  <Link
+                    role="button"
+                    aria-label="Get it on google play store"
+                    href="/"
+                  >
+                    <Image
+                      src="/google-play-badge.png"
+                      alt="Get it on google play store"
+                      height={646}
+                      width={250}
+                      style={{ height: '66px', width: 'auto' }}
+                    />
+                  </Link>
+                  <Link
+                    role="button"
+                    aria-label="Get it on apple app store"
+                    href="/"
+                  >
+                    <Image
+                      src="download-on-the-app-store.svg"
+                      alt="Get it on apple app store"
+                      height={40}
+                      width={119.66407}
+                      style={{ height: '45px', width: 'auto' }}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="lg:flex lg:w-full lg:flex-col lg:items-start lg:p-3">
               <h1 className="hidden text-center font-bold lg:block lg:text-start">
-                Connect With
+                Connect With Us
               </h1>
               <Link
                 className="flex items-center gap-1 pl-2 text-[#3b5999]"
@@ -61,7 +77,11 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className="hidden lg:block ">
+          <div
+            role="group"
+            aria-label="More from just sell it"
+            className="hidden lg:block"
+          >
             <h1 className="pb-4 font-bold">More From J-S-I</h1>
             <div className="flex flex-col gap-1 text-quaternary">
               <Link href="/">Sell Fast</Link>
