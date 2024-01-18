@@ -25,14 +25,10 @@ function SignupContent({
         <div className="w-full pb-4 pt-4 md:w-1/2 md:p-4">
           <form className="flex flex-col items-center justify-center gap-4">
             <div className="w-full max-w-md">
-              <label
-                htmlFor="login-name"
-                className="flex flex-col gap-1 text-quaternary"
-              >
+              <label className="flex flex-col gap-1 text-quaternary">
                 Name:
                 <input
                   type="text"
-                  id="login-name"
                   name="name"
                   value=""
                   className="rounded border border-quaternary"
@@ -40,14 +36,10 @@ function SignupContent({
               </label>
             </div>
             <div className="w-full max-w-md">
-              <label
-                htmlFor="login-email"
-                className="flex flex-col gap-1 text-quaternary"
-              >
+              <label className="flex flex-col gap-1 text-quaternary">
                 Email:
                 <input
                   type="email"
-                  id="login-email"
                   name="email"
                   value=""
                   className="rounded border border-quaternary"
@@ -55,14 +47,10 @@ function SignupContent({
               </label>
             </div>
             <div className="w-full max-w-md">
-              <label
-                htmlFor="login-password"
-                className="flex flex-col gap-1 text-quaternary"
-              >
+              <label className="flex flex-col gap-1 text-quaternary">
                 Password:
                 <input
                   type="password"
-                  id="login-password"
                   name="password"
                   value=""
                   className="rounded border border-quaternary"
@@ -70,14 +58,10 @@ function SignupContent({
               </label>
             </div>
             <div className="w-full max-w-md">
-              <label
-                htmlFor="login-confirm-password"
-                className="flex flex-col gap-1 text-quaternary"
-              >
+              <label className="flex flex-col gap-1 text-quaternary">
                 Confirm Password:
                 <input
                   type="password"
-                  id="login-confirm-password"
                   name="confirmPassword"
                   value=""
                   className="rounded border border-quaternary"
