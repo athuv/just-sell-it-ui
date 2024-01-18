@@ -3,7 +3,7 @@
 import Modal from '@/app/components/popup/modal';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { createPortal } from 'react-dom';
-import EmailLogin from '@/app/components/popup/login-signup/emailLogin';
+import EmailLoginContent from '@/app/components/popup/login-signup/emailLoginContent';
 import SignupContent from '@/app/components/popup/login-signup/signupContent';
 
 function ModalLoginSignup({
@@ -14,7 +14,7 @@ function ModalLoginSignup({
   const [content, setContent] = useState<string>('login');
   return createPortal(
     <Modal setIsModalOpen={setIsModalOpen}>
-      {content === 'login' && <EmailLogin setContent={setContent} />}
+      {content === 'login' && <EmailLoginContent setContent={setContent} />}
       {content === 'signup' && <SignupContent setContent={setContent} />}
     </Modal>,
     document.getElementById('modal-root')!,

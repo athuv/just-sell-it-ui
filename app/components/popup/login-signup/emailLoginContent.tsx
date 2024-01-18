@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FcGoogle } from 'react-icons/fc';
 
-function EmailLogin({
+function EmailLoginContent({
   setContent,
 }: {
   setContent: Dispatch<SetStateAction<string>>;
@@ -123,4 +123,4 @@ function EmailLogin({
   );
 }
 
-export default EmailLogin;
+export default EmailLoginContent;
