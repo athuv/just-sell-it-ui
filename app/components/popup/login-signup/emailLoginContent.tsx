@@ -5,6 +5,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { TLoginSchema, loginSchema } from '@/lib/zodSchema/loginSchema';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import InputErrorMessage from '@/app/components/error/inputErrorMessage';
 
 function EmailLoginContent({
   setContent,
@@ -14,10 +15,13 @@ function EmailLoginContent({
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, touchedFields },
     reset,
     setError,
-  } = useForm<TLoginSchema>({ resolver: zodResolver(loginSchema) });
+  } = useForm<TLoginSchema>({
+    mode: 'onTouched',
+    resolver: zodResolver(loginSchema),
+  });
 
   const onSubmit = async (data: TLoginSchema) => {
     const response = await fetch('/api/login', {
@@ -49,7 +53,8 @@ function EmailLoginContent({
       reset();
     }
   };
-
+  console.log(`touch - ${touchedFields.email}`);
+  console.log(`errors - ${!errors.email}`);
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-center">
@@ -73,10 +78,17 @@ function EmailLoginContent({
                   <input
                     {...register('email')}
                     type="email"
-                    className="rounded border border-quaternary"
+                    className={`rounded border-2  ${
+                      errors.email &&
+                      'border-red-600 focus:border-red-600 focus:outline-none focus:ring-0'
+                    } ${
+                      touchedFields.email &&
+                      !errors.email &&
+                      'border-green-500 focus:border-green-600 focus:outline-none focus:ring-0'
+                    } `}
                   />
                   {errors.email && (
-                    <p className="text-red-500">{`${errors.email.message}`}</p>
+                    <InputErrorMessage message={errors.email.message} />
                   )}
                 </label>
               </div>
@@ -89,7 +101,7 @@ function EmailLoginContent({
                     className="rounded border border-quaternary"
                   />
                   {errors.password && (
-                    <p className="text-red-500">{`${errors.password.message}`}</p>
+                    <InputErrorMessage message={errors.password.message} />
                   )}
                 </label>
               </div>
