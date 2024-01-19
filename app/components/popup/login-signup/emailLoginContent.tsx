@@ -2,12 +2,54 @@ import React, { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FcGoogle } from 'react-icons/fc';
+import { TLoginSchema, loginSchema } from '@/lib/zodSchema/loginSchema';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 function EmailLoginContent({
   setContent,
 }: {
   setContent: Dispatch<SetStateAction<string>>;
 }) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+    setError,
+  } = useForm<TLoginSchema>({ resolver: zodResolver(loginSchema) });
+
+  const onSubmit = async (data: TLoginSchema) => {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const responseData = await response.json();
+
+    if (responseData.errors) {
+      const { errors: serverValidationErrors } = responseData;
+      if (serverValidationErrors.email) {
+        setError('email', {
+          type: 'server',
+          message: serverValidationErrors.email,
+        });
+      } else if (serverValidationErrors.password) {
+        setError('password', {
+          type: 'server',
+          message: serverValidationErrors.password,
+        });
+      }
+    }
+
+    if (responseData.success) {
+      console.log('form submitted');
+      reset();
+    }
+  };
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-center">
@@ -21,16 +63,21 @@ function EmailLoginContent({
       <div className="flex flex-col md:w-full md:flex-row-reverse">
         <div className="flex flex-col md:w-1/2 md:p-4">
           <div className="w-full pt-4">
-            <form className="flex flex-col items-center justify-center gap-4">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="flex flex-col items-center justify-center gap-4"
+            >
               <div className="w-full max-w-md">
                 <label className="flex flex-col gap-1 text-quaternary">
                   Email:
                   <input
+                    {...register('email')}
                     type="email"
-                    name="email"
-                    value=""
                     className="rounded border border-quaternary"
                   />
+                  {errors.email && (
+                    <p className="text-red-500">{`${errors.email.message}`}</p>
+                  )}
                 </label>
               </div>
               <div className="w-full max-w-md">
@@ -38,20 +85,24 @@ function EmailLoginContent({
                   Password:
                   <input
                     type="password"
-                    name="password"
-                    value=""
+                    {...register('password')}
                     className="rounded border border-quaternary"
                   />
+                  {errors.password && (
+                    <p className="text-red-500">{`${errors.password.message}`}</p>
+                  )}
                 </label>
               </div>
               <div className="flex w-full max-w-md flex-col text-center">
                 <button
-                  type="button"
+                  disabled={isSubmitting}
+                  type="submit"
                   className="mb-2 w-full rounded-md border border-quaternary bg-tertiaryBg py-2 text-primaryBg"
                 >
                   Login
                 </button>
                 <button
+                  disabled={isSubmitting}
                   type="button"
                   className="flex max-w-md items-center justify-center gap-2 rounded-md border border-quaternary bg-transparent py-2"
                 >
