@@ -24,7 +24,7 @@ function FormInput({
         'border-red-600 focus:border-red-600 focus:outline-none focus:ring-0'
       } ${
         isSuccess &&
-        'border-green-500 focus:border-green-600 focus:outline-none focus:ring-0'
+        'valid:border-green-500 valid:focus:border-green-600 valid:focus:outline-none valid:focus:ring-0'
       }`}
     />
   );
