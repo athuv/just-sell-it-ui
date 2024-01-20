@@ -24,6 +24,18 @@ function EmailLoginContent({
     resolver: zodResolver(loginSchema),
   });
 
+  function setServerError(
+    field: keyof TLoginSchema,
+    serverValidationErrors: any,
+  ) {
+    if (serverValidationErrors[field]) {
+      setError(field, {
+        type: 'server',
+        message: serverValidationErrors[field],
+      });
+    }
+  }
+
   const onSubmit = async (data: TLoginSchema) => {
     const response = await fetch('/api/login', {
       method: 'POST',
@@ -36,17 +48,7 @@ function EmailLoginContent({
 
     if (responseData.errors) {
       const { errors: serverValidationErrors } = responseData;
-      if (serverValidationErrors.email) {
-        setError('email', {
-          type: 'server',
-          message: serverValidationErrors.email,
-        });
-      } else if (serverValidationErrors.password) {
-        setError('password', {
-          type: 'server',
-          message: serverValidationErrors.password,
-        });
-      }
+      setServerError('email', serverValidationErrors);
     }
 
     if (responseData.success) {
