@@ -6,6 +6,7 @@ import { TLoginSchema, loginSchema } from '@/lib/zodSchema/loginSchema';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import InputErrorMessage from '@/app/components/error/inputErrorMessage';
+import FormInput from '@/app/components/input/formInput';
 
 function EmailLoginContent({
   setContent,
@@ -74,18 +75,12 @@ function EmailLoginContent({
               <div className="w-full max-w-md">
                 <label className="flex flex-col gap-1 text-quaternary">
                   Email:
-                  <input
-                    {...register('email')}
-                    aria-errormessage="errorMessage"
+                  <FormInput
+                    register={{ ...register('email') }}
                     type="email"
-                    className={`rounded border-2  ${
-                      errors.email &&
-                      'border-red-600 focus:border-red-600 focus:outline-none focus:ring-0'
-                    } ${
-                      touchedFields.email &&
-                      !errors.email &&
-                      'border-green-500 focus:border-green-600 focus:outline-none focus:ring-0'
-                    } `}
+                    classes="rounded border-2"
+                    isError={errors.email && true}
+                    isSuccess={touchedFields.email && !errors.email && true}
                   />
                   {errors.email && (
                     <InputErrorMessage message={errors.email.message} />
@@ -95,11 +90,14 @@ function EmailLoginContent({
               <div className="w-full max-w-md">
                 <label className="flex flex-col gap-1 text-quaternary">
                   Password:
-                  <input
+                  <FormInput
+                    register={{ ...register('password') }}
                     type="password"
-                    aria-errormessage="errorMessage"
-                    {...register('password')}
-                    className="rounded border border-quaternary"
+                    classes="rounded border-2"
+                    isError={errors.password && true}
+                    isSuccess={
+                      touchedFields.password && !errors.password && true
+                    }
                   />
                   {errors.password && (
                     <InputErrorMessage message={errors.password.message} />
