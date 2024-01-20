@@ -8,7 +8,6 @@ export async function POST(request: Request) {
   const body: TLoginSchema = await request.json();
   const result = loginSchema.safeParse(body);
 
-  // check out Zod's .flatten() method for an easier way to process errors
   let zodErrors = {};
   if (!result.success) {
     result.error.issues.forEach((issue) => {

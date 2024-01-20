@@ -53,8 +53,7 @@ function EmailLoginContent({
       reset();
     }
   };
-  console.log(`touch - ${touchedFields.email}`);
-  console.log(`errors - ${!errors.email}`);
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-center">
@@ -77,6 +76,7 @@ function EmailLoginContent({
                   Email:
                   <input
                     {...register('email')}
+                    aria-errormessage="errorMessage"
                     type="email"
                     className={`rounded border-2  ${
                       errors.email &&
@@ -97,6 +97,7 @@ function EmailLoginContent({
                   Password:
                   <input
                     type="password"
+                    aria-errormessage="errorMessage"
                     {...register('password')}
                     className="rounded border border-quaternary"
                   />
@@ -108,6 +109,7 @@ function EmailLoginContent({
               <div className="flex w-full max-w-md flex-col text-center">
                 <button
                   disabled={isSubmitting}
+                  aria-disabled={isSubmitting}
                   type="submit"
                   className="mb-2 w-full rounded-md border border-quaternary bg-tertiaryBg py-2 text-primaryBg"
                 >
