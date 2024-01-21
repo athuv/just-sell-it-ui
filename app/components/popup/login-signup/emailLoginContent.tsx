@@ -1,62 +1,13 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { FcGoogle } from 'react-icons/fc';
-import { TLoginSchema, loginSchema } from '@/lib/zodSchema/loginSchema';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import InputErrorMessage from '@/app/components/error/inputErrorMessage';
-import FormInput from '@/app/components/input/formInput';
+
+import LoginForm from '@/app/login-signup/loginForm';
 
 function EmailLoginContent({
   setContent,
 }: {
   setContent: Dispatch<SetStateAction<string>>;
 }) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting, touchedFields },
-    reset,
-    setError,
-  } = useForm<TLoginSchema>({
-    mode: 'onTouched',
-    resolver: zodResolver(loginSchema),
-  });
-
-  function setServerError(
-    field: keyof TLoginSchema,
-    serverValidationErrors: any,
-  ) {
-    if (serverValidationErrors[field]) {
-      setError(field, {
-        type: 'server',
-        message: serverValidationErrors[field],
-      });
-    }
-  }
-
-  const onSubmit = async (data: TLoginSchema) => {
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const responseData = await response.json();
-
-    if (responseData.errors) {
-      const { errors: serverValidationErrors } = responseData;
-      setServerError('email', serverValidationErrors);
-    }
-
-    if (responseData.success) {
-      console.log('form submitted');
-      reset();
-    }
-  };
-
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-center">
@@ -70,64 +21,7 @@ function EmailLoginContent({
       <div className="flex flex-col md:w-full md:flex-row-reverse">
         <div className="flex flex-col md:w-1/2 md:p-4">
           <div className="w-full pt-4">
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="flex flex-col items-center justify-center gap-4"
-            >
-              <div className="w-full max-w-md">
-                <label className="flex flex-col gap-1 text-quaternary">
-                  Email:
-                  <FormInput
-                    register={{ ...register('email') }}
-                    type="email"
-                    classes="rounded border-2"
-                    isError={errors.email && true}
-                    isSuccess={touchedFields.email && !errors.email && true}
-                  />
-                  {errors.email && (
-                    <InputErrorMessage message={errors.email.message} />
-                  )}
-                </label>
-              </div>
-              <div className="w-full max-w-md">
-                <label className="flex flex-col gap-1 text-quaternary">
-                  Password:
-                  <FormInput
-                    register={{ ...register('password') }}
-                    type="password"
-                    classes="rounded border-2"
-                    isError={errors.password && true}
-                    isSuccess={
-                      touchedFields.password && !errors.password && true
-                    }
-                  />
-                  {errors.password && (
-                    <InputErrorMessage message={errors.password.message} />
-                  )}
-                </label>
-              </div>
-              <div className="flex w-full max-w-md flex-col text-center">
-                <button
-                  disabled={isSubmitting}
-                  aria-disabled={isSubmitting}
-                  type="submit"
-                  className="mb-2 w-full rounded-md border border-quaternary bg-tertiaryBg py-2 text-primaryBg"
-                >
-                  Login
-                </button>
-                <button
-                  disabled={isSubmitting}
-                  type="button"
-                  className="flex max-w-md items-center justify-center gap-2 rounded-md border border-quaternary bg-transparent py-2"
-                >
-                  <FcGoogle />
-                  <span>Continue with Google</span>
-                </button>
-                <Link href="/" className="pt-2 text-blue-600">
-                  Forgot Password?
-                </Link>
-              </div>
-            </form>
+            <LoginForm />
           </div>
           <div className="flex flex-col items-center justify-center gap-2 border-b pb-5 pt-6 md:border-b-0">
             <h1 className="font-bold">Don&apos;t have an account yet?</h1>

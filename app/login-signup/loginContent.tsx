@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FcGoogle } from 'react-icons/fc';
+import LoginForm from '@/app/login-signup/loginForm';
 
 function LoginContent() {
   return (
@@ -17,7 +17,8 @@ function LoginContent() {
       <div className="flex flex-col md:w-full md:flex-row-reverse">
         <div className="flex flex-col md:w-1/2 md:p-4">
           <div className="w-full pt-4">
-            <form className="flex flex-col items-center justify-center gap-4">
+            <LoginForm />
+            {/* <form className="flex flex-col items-center justify-center gap-4">
               <div className="w-full max-w-md">
                 <label className="flex flex-col gap-1 text-quaternary">
                   Email:
@@ -58,7 +59,7 @@ function LoginContent() {
                   Forgot Password?
                 </Link>
               </div>
-            </form>
+            </form> */}
           </div>
           <div className="flex flex-col items-center justify-center gap-2 border-b pb-5 pt-6 md:border-b-0">
             <h1 className="font-bold">Don&apos;t have an account yet?</h1>

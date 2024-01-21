@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { FcGoogle } from 'react-icons/fc';
 import Link from 'next/link';
+import LoginForm from '@/app/login-signup/loginForm';
 
 function LoginSignupContent() {
   return (
@@ -76,49 +76,10 @@ function LoginSignupContent() {
           </form>
         </div>
         <div className="flex w-2/4 flex-col p-4">
-          <div className="w-full pt-4">
-            <form className="flex flex-col items-center justify-center gap-4">
-              <div className="w-full max-w-80">
-                <label className="flex flex-col gap-1 text-quaternary">
-                  Email:
-                  <input
-                    type="email"
-                    name="email"
-                    defaultValue=""
-                    className="rounded border border-quaternary"
-                  />
-                </label>
-              </div>
-              <div className="w-full max-w-80">
-                <label className="flex flex-col gap-1 text-quaternary">
-                  Password:
-                  <input
-                    type="password"
-                    name="password"
-                    defaultValue=""
-                    className="rounded border border-quaternary"
-                  />
-                </label>
-              </div>
-              <div className="flex w-full max-w-80 flex-col text-center">
-                <button
-                  type="button"
-                  className="mb-2 w-full rounded-md border border-quaternary bg-tertiaryBg py-2 text-primaryBg"
-                >
-                  Login
-                </button>
-                <button
-                  type="button"
-                  className="flex max-w-md items-center justify-center gap-2 rounded-md border border-quaternary bg-transparent py-2"
-                >
-                  <FcGoogle />
-                  <span>Continue with Google</span>
-                </button>
-                <Link href="/" className="pt-2 text-blue-600">
-                  Forgot Password?
-                </Link>
-              </div>
-            </form>
+          <div className="flex w-full justify-center pt-4">
+            <div className=" w-full max-w-80">
+              <LoginForm />
+            </div>
           </div>
         </div>
       </div>
