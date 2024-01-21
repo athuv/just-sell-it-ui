@@ -51,6 +51,8 @@ function LoginForm() {
 
   return (
     <form
+      role="contentinfo"
+      aria-label="Login form"
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col items-center justify-center gap-4"
     >

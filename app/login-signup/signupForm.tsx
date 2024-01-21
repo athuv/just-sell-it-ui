@@ -50,6 +50,8 @@ function SignupForm() {
 
   return (
     <form
+      role="contentinfo"
+      aria-label="Signup form"
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col items-center justify-center gap-4"
     >
