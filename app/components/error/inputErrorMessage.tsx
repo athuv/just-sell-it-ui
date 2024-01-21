@@ -8,7 +8,7 @@ function InputErrorMessage({ message }: { message: string | undefined }) {
       aria-live="polite"
       aria-atomic="true"
       aria-relevant="additions"
-      className="flex items-center gap-2 text-sm text-red-500"
+      className="text-error flex items-center gap-2 text-sm"
     >
       <FaExclamationTriangle />
       <span>{message}</span>

@@ -21,10 +21,10 @@ function FormInput({
       type={type}
       className={`${classes} ${
         isError &&
-        'border-red-600 focus:border-red-600 focus:outline-none focus:ring-0'
+        'border-error focus:border-error focus:outline-none focus:ring-0'
       } ${
         isSuccess &&
-        'valid:border-green-500 valid:focus:border-green-600 valid:focus:outline-none valid:focus:ring-0'
+        'valid:border-success valid:focus:border-success valid:focus:outline-none valid:focus:ring-0'
       }`}
     />
   );
