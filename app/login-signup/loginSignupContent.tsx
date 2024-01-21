@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import LoginForm from '@/app/login-signup/loginForm';
+import SignupForm from '@/app/login-signup/signupForm';
 
 function LoginSignupContent() {
   return (
@@ -12,72 +12,15 @@ function LoginSignupContent() {
           The largest marketplace in Asia
         </span>
       </div>
-      <div className="flex w-full items-center justify-center gap-4 divide-x-2 shadow-md">
-        <div className="w-full pb-4 pt-4 md:w-1/2 md:p-4">
-          <form className="flex flex-col items-center justify-center gap-4">
-            <div className="w-full max-w-80">
-              <label className="flex flex-col gap-1 text-quaternary">
-                Name:
-                <input
-                  type="text"
-                  name="name"
-                  defaultValue=""
-                  className="rounded border border-quaternary"
-                />
-              </label>
-            </div>
-            <div className="w-full max-w-80">
-              <label className="flex flex-col gap-1 text-quaternary">
-                Email:
-                <input
-                  type="email"
-                  name="email"
-                  defaultValue=""
-                  className="rounded border border-quaternary"
-                />
-              </label>
-            </div>
-            <div className="w-full max-w-80">
-              <label className="flex flex-col gap-1 text-quaternary">
-                Password:
-                <input
-                  type="password"
-                  name="password"
-                  defaultValue=""
-                  className="rounded border border-quaternary"
-                />
-              </label>
-            </div>
-            <div className="w-full max-w-80">
-              <label className="flex flex-col gap-1 text-quaternary">
-                Confirm Password:
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  defaultValue=""
-                  className="rounded border border-quaternary"
-                />
-              </label>
-            </div>
-            <div className="flex w-full max-w-80 flex-col text-center">
-              <button
-                type="button"
-                className="mb-2 w-full max-w-md rounded-md border border-quaternary bg-tertiaryBg py-2 text-primaryBg"
-              >
-                Signup
-              </button>
-              <div className="flex w-full flex-col text-center text-[0.7rem] text-sm text-quaternary">
-                <div>By signing up for an account you agree to our</div>
-                <Link href="/" className="text-blue-600">
-                  Terms & Conditions
-                </Link>
-              </div>
-            </div>
-          </form>
+      <div className="flex min-h-[505px] w-full items-center justify-center gap-4 divide-x-2 shadow-md">
+        <div className="flex w-full justify-center pb-4 pt-4 md:w-1/2 md:p-4">
+          <div className="w-full max-w-80">
+            <SignupForm />
+          </div>
         </div>
         <div className="flex w-2/4 flex-col p-4">
           <div className="flex w-full justify-center pt-4">
-            <div className=" w-full max-w-80">
+            <div className="w-full max-w-80">
               <LoginForm />
             </div>
           </div>

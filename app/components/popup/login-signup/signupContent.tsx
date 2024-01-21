@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import SignupForm from '@/app/login-signup/signupForm';
 
 function SignupContent({
   setContent,
@@ -23,76 +23,17 @@ function SignupContent({
       </div>
       <div className="flex flex-col md:flex-row-reverse md:gap-2">
         <div className="w-full pb-4 pt-4 md:w-1/2 md:p-4">
-          <form className="flex flex-col items-center justify-center gap-4">
-            <div className="w-full max-w-md">
-              <label className="flex flex-col gap-1 text-quaternary">
-                Name:
-                <input
-                  type="text"
-                  name="name"
-                  value=""
-                  className="rounded border border-quaternary"
-                />
-              </label>
-            </div>
-            <div className="w-full max-w-md">
-              <label className="flex flex-col gap-1 text-quaternary">
-                Email:
-                <input
-                  type="email"
-                  name="email"
-                  value=""
-                  className="rounded border border-quaternary"
-                />
-              </label>
-            </div>
-            <div className="w-full max-w-md">
-              <label className="flex flex-col gap-1 text-quaternary">
-                Password:
-                <input
-                  type="password"
-                  name="password"
-                  value=""
-                  className="rounded border border-quaternary"
-                />
-              </label>
-            </div>
-            <div className="w-full max-w-md">
-              <label className="flex flex-col gap-1 text-quaternary">
-                Confirm Password:
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  value=""
-                  className="rounded border border-quaternary"
-                />
-              </label>
-            </div>
-            <div className="flex w-full max-w-md flex-col text-center">
-              <button
-                type="button"
-                className="mb-2 w-full max-w-md rounded-md border border-quaternary bg-tertiaryBg py-2 text-primaryBg"
-              >
-                Signup
-              </button>
-              <div className="flex w-full flex-col text-center text-[0.7rem] text-sm text-quaternary">
-                <div>By signing up for an account you agree to our</div>
-                <Link href="/" className="text-blue-600">
-                  Terms & Conditions
-                </Link>
-              </div>
-            </div>
-            <div className="flex w-full flex-col items-center justify-center gap-2">
-              <h1 className="font-bold">Already have an account?</h1>
-              <button
-                type="button"
-                className="text-primaryB w-full max-w-md rounded-md bg-quaternary py-2 text-primaryBg"
-                onClick={() => setContent('login')}
-              >
-                Login
-              </button>
-            </div>
-          </form>
+          <SignupForm />
+          <div className="flex w-full flex-col items-center justify-center gap-2 pt-4">
+            <h1 className="font-bold">Already have an account?</h1>
+            <button
+              type="button"
+              className="text-primaryB w-full max-w-md rounded-md bg-quaternary py-2 text-primaryBg"
+              onClick={() => setContent('login')}
+            >
+              Login
+            </button>
+          </div>
         </div>
         <div className="flex items-center justify-center border-t md:w-1/2 md:border-r md:border-t-0 md:p-4">
           <div className="md:flex md:flex-col md:gap-8">
