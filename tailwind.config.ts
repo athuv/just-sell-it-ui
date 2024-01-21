@@ -19,6 +19,8 @@ const config: Config = {
         tertiaryBg: '#be4555',
         quaternary: '#6e6e6e',
         quinary: '#a00d0d',
+        error: '#991B1B',
+        success: '#22C55E',
       },
     },
   },
