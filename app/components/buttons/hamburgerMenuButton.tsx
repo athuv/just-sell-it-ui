@@ -1,28 +1,27 @@
 'use client';
-import React from 'react';
-import { Dispatch, SetStateAction } from 'react';
+
+import React, { Dispatch, SetStateAction } from 'react';
 import { BiMenu } from 'react-icons/bi';
 
-const HumburgerMenuButton = ({
+function HumburgerMenuButton({
   setIsOpen,
   isOpen,
 }: {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   isOpen: boolean;
-}) => {
+}) {
   return (
-    <>
-      <button
-        aria-label="Menu"
-        className="absolute left-3 top-[0.85rem] z-10 text-4xl text-tertiaryBg lg:hidden"
-        onClick={() => {
-          isOpen ? setIsOpen(false) : setIsOpen(true);
-        }}
-      >
-        <BiMenu />
-      </button>
-    </>
+    <button
+      type="button"
+      aria-label="Menu"
+      className="absolute left-3 top-[0.85rem] z-10 text-4xl text-tertiaryBg lg:hidden"
+      onClick={() => {
+        (isOpen ? () => setIsOpen(false) : () => setIsOpen(true))();
+      }}
+    >
+      <BiMenu />
+    </button>
   );
-};
+}
 
 export default HumburgerMenuButton;

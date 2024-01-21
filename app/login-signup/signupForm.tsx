@@ -43,7 +43,7 @@ function SignupForm() {
     }
 
     if (responseData.success) {
-      console.log('form submitted');
+      // console.log('form submitted');
       reset();
     }
   };

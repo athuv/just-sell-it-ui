@@ -1,5 +1,4 @@
-import { Space_Mono } from 'next/font/google';
-import { Roboto } from 'next/font/google';
+import { Space_Mono, Roboto } from 'next/font/google';
 
 export const spaceMono = Space_Mono({
   subsets: ['latin'],
