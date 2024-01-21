@@ -15,10 +15,6 @@ export async function POST(request: Request) {
     });
   }
 
-  if (result.success) {
-    console.log('succeed');
-  }
-
   return NextResponse.json(
     Object.keys(zodErrors).length > 0
       ? { errors: zodErrors }
