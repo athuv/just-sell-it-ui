@@ -15,6 +15,7 @@ function AreaContent({
         onClick={() => {
           setSelectedArea(['1', 'Kandy']);
           setIsModalOpen(false);
+          document.body.style.overflow = 'visible';
         }}
       >
         ABCDE
