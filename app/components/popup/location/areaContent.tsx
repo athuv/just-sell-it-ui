@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+import { BiChevronRight } from 'react-icons/bi';
 
 function AreaContent({
   setSelectedArea,
@@ -7,19 +8,27 @@ function AreaContent({
   setSelectedArea: Dispatch<SetStateAction<string[] | undefined>>;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
+  const areas: string[] = ['Kandy City', 'Gampola', 'Nawalapitiya', 'Geli-Oya'];
   return (
     <ul className="p-4 text-quaternary">
-      <button
-        type="button"
-        key="1"
-        onClick={() => {
-          setSelectedArea(['1', 'Kandy']);
-          setIsModalOpen(false);
-          document.body.style.overflow = 'visible';
-        }}
-      >
-        ABCDE
-      </button>
+      {areas.map((_area, index) => (
+        <button
+          type="button"
+          className="flex w-full justify-between border-b py-3"
+          // eslint-disable-next-line react/no-array-index-key
+          key={index}
+          onClick={() => {
+            setSelectedArea([index.toString(), _area]);
+            setIsModalOpen(false);
+            document.body.style.overflow = 'visible';
+          }}
+        >
+          <span>{_area}</span>
+          <span className="text-2xl">
+            <BiChevronRight />
+          </span>
+        </button>
+      ))}
     </ul>
   );
 }
