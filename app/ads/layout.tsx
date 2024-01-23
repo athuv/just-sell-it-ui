@@ -3,12 +3,12 @@ import React from 'react';
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <section>
+    <main className="pb-4">
       <aside className="md:hidden">
         <MobileSearchFilter />
       </aside>
       {children}
-    </section>
+    </main>
   );
 }
 
