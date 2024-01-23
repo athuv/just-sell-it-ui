@@ -10,7 +10,7 @@ function MobileSearchFilter() {
       <div className="bg-tertiaryBg px-4 py-4">
         <SearchInput />
       </div>
-      <div className="flex h-11 items-center justify-center divide-x shadow-md">
+      <div className="flex h-11 items-center justify-between divide-x shadow-md">
         <ButtonLocationAds />
         <div className="flex items-center justify-center gap-2 px-4">
           <span className="text-xl text-tertiaryBg">
