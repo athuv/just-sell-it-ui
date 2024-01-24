@@ -4,14 +4,14 @@ import { MdStars, MdVerifiedUser } from 'react-icons/md';
 
 function ItemCard() {
   return (
-    <div className="h-40 border-y shadow-md hover:shadow-xl">
-      <div className="flex h-full justify-stretch gap-1 p-2">
-        <div className="flex min-w-[120px]">
+    <div className="min-h-40 border-y shadow-md hover:shadow-xl">
+      <div className="flex h-full justify-stretch gap-1 p-2 lg:gap-4">
+        <div className="flex max-w-[120px] lg:max-w-52">
           <Image
-            src="/ad-images/house.webp"
+            src="/ad-images/desktop-pic.jpg"
             alt="item-image"
-            width={160}
-            height={120}
+            width={605}
+            height={466}
             className="self-center"
           />
         </div>
@@ -22,12 +22,12 @@ function ItemCard() {
           <span className="text-md block overflow-hidden overflow-ellipsis whitespace-nowrap py-1 text-sm">
             2 Bedrooms, 1 Washroom, 1 Dinning Room
           </span>
-          <div className="flex items-center justify-evenly gap-1">
+          <div className="flex items-center justify-evenly gap-1 lg:justify-start">
             <div className="flex items-center justify-center rounded-sm bg-tertiaryBg px-1 text-xs text-primaryBg">
               <MdStars />
               <span className="text-xs">MEMBER</span>
             </div>
-            <div className="flex items-center justify-center rounded-sm text-xs">
+            <div className="text-link flex items-center justify-center rounded-sm text-xs">
               <MdVerifiedUser />
               <span className="text-xs">VERIFIED SELLER</span>
             </div>
