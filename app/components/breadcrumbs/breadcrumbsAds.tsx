@@ -3,7 +3,7 @@ import { BiChevronRight } from 'react-icons/bi';
 
 function BreadcrumbsAds() {
   return (
-    <div className="flex items-center justify-start p-4 text-sm text-quaternary">
+    <div className="flex items-center justify-start text-sm text-quaternary">
       <span>Home</span>
       <span>
         <BiChevronRight />

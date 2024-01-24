@@ -2,8 +2,8 @@ import React from 'react';
 
 function Allads() {
   return (
-    <div className="px-4 py-4">
-      <div>
+    <div className="py-4">
+      <div className="px-4 lg:px-0">
         <h1 className="text-sm font-bold">
           Buy, Sell, Rent or Find Anything in Sri Lanka
         </h1>
