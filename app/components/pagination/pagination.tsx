@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
@@ -8,7 +9,25 @@ function Pagination() {
         <BiChevronLeft />
       </div>
       <div className="pr-2">Previous</div>
-      <div className="border-x px-1">Page 1 of 13, 640</div>
+      <div className="border-x px-1">
+        <span className="lg:hidden">Page 1 of 13, 640</span>
+        <div className="hidden lg:flex lg:gap-4">
+          <Link href="/">1</Link>
+          <Link href="/" className="hover:text-link text-quaternary">
+            2
+          </Link>
+          <Link href="/" className="hover:text-link text-quaternary">
+            3
+          </Link>
+          <Link href="/" className="hover:text-link text-quaternary">
+            4
+          </Link>
+          <Link href="/" className="hover:text-link text-quaternary ">
+            5
+          </Link>
+          <span className="text-link">...</span>
+        </div>
+      </div>
       <div className="pl-2">Next</div>
       <div className="text-2xl font-bold">
         <BiChevronRight />
