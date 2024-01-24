@@ -50,10 +50,7 @@ function Footer() {
               <h1 className="hidden text-center font-bold lg:block lg:text-start">
                 Connect With Us
               </h1>
-              <Link
-                className="flex items-center gap-1 pl-2 text-[#3b5999]"
-                href="/"
-              >
+              <Link className="text-link flex items-center gap-1 pl-2" href="/">
                 <div className="text-3xl">
                   <BiLogoFacebookSquare />
                 </div>
