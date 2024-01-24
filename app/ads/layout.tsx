@@ -3,6 +3,7 @@ import AdCard from '@/app/components/AdCard/ItemCard';
 import Pagination from '@/app/components/pagination/pagination';
 import React from 'react';
 import BreadcrumbsAds from '@/app/components/breadcrumbs/breadcrumbsAds';
+import CategoryListing from '@/app/components/categoryBrowser/categoryListing';
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -17,6 +18,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       </aside>
       <Pagination />
       <BreadcrumbsAds />
+      <CategoryListing />
     </main>
   );
 }
