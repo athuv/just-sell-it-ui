@@ -21,6 +21,7 @@ const config: Config = {
         quinary: '#a00d0d',
         error: '#991B1B',
         success: '#22C55E',
+        link: '#3b5999',
       },
     },
   },
