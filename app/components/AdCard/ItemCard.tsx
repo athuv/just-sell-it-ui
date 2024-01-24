@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { MdStars, MdVerifiedUser } from 'react-icons/md';
 
 function ItemCard() {
   return (
-    <div className="min-h-40 border-y shadow-md hover:shadow-xl">
+    <Link href="/" className="min-h-40 border-y shadow-md hover:shadow-xl">
       <div className="flex h-full justify-stretch gap-1 p-2 lg:gap-4">
         <div className="flex max-w-[120px] lg:max-w-52">
           <Image
@@ -37,7 +38,7 @@ function ItemCard() {
           <span className="self-end text-sm text-quaternary">Just Now</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
