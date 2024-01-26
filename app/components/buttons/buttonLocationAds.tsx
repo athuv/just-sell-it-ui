@@ -11,11 +11,11 @@ function ButtonLocationAds() {
     undefined,
   );
   const router = useRouter();
-  const { area } = useParams();
+  const { area, category } = useParams();
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    selectedArea && router.push(`/ads/${selectedArea[1]}`);
+    selectedArea && router.push(`/ads/${selectedArea[1]}/${category || ''}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedArea]);
 
@@ -24,7 +24,7 @@ function ButtonLocationAds() {
       <button
         type="button"
         aria-label="Location"
-        className="flex items-center justify-center gap-2 px-4"
+        className="flex items-center justify-center gap-2 overflow-hidden px-4"
         onClick={() => {
           setIsModalOpen(true);
           document.body.style.overflow = 'hidden';
@@ -33,7 +33,14 @@ function ButtonLocationAds() {
         <span className="text-xl text-tertiaryBg">
           <FaLocationDot />
         </span>
-        <span>{area ? decodeURIComponent(area.toString()) : 'Location'}</span>
+        <span className="overflow-hidden overflow-ellipsis whitespace-nowrap">
+          {/* eslint-disable-next-line no-nested-ternary */}
+          {area
+            ? area === 'all-location'
+              ? 'Location'
+              : decodeURIComponent(area.toString())
+            : 'Location'}
+        </span>
       </button>
       {IsModalOpen && (
         <LocationModal
