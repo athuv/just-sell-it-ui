@@ -16,7 +16,7 @@ function Header() {
         <div className="flex h-full items-center justify-between overflow-hidden border-b-2 border-tertiaryBg px-4 py-1 pl-12 lg:mx-40 lg:border-none lg:px-3">
           <div className="flex items-center gap-4">
             <LogoSvg />
-            <div className="flex items-center justify-center">
+            <div className="hidden items-center justify-center lg:flex">
               <button
                 type="button"
                 className="border border-tertiaryBg px-2 text-tertiaryBg"
