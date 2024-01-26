@@ -1,5 +1,5 @@
 import MobileSearchFilter from '@/app/components/searchFilter/mobileSearchFilter';
-import ItemCard from '@/app/components/adCard/ItemCard';
+import ItemCard from '@/app/components/ItemCard/ItemCard';
 import Pagination from '@/app/components/pagination/pagination';
 import React from 'react';
 import BreadcrumbsAds from '@/app/components/breadcrumbs/breadcrumbsAds';

@@ -18,7 +18,7 @@ function ItemCard() {
         </div>
         <div className="flex w-full flex-col overflow-hidden">
           <h2 className="text-md block overflow-hidden overflow-ellipsis whitespace-nowrap font-bold">
-            Apple iPhone 11 Pro Max 256 Gb (Used)
+            Apple iPhone 11 Pro Max 256 GB (Used)
           </h2>
           <span className="text-md block overflow-hidden overflow-ellipsis whitespace-nowrap py-1 text-sm">
             2 Bedrooms, 1 Washroom, 1 Dinning Room
@@ -28,13 +28,13 @@ function ItemCard() {
               <MdStars />
               <span className="text-xs">MEMBER</span>
             </div>
-            <div className="text-link flex items-center justify-center rounded-sm text-xs">
+            <div className="flex items-center justify-center rounded-sm text-xs text-link">
               <MdVerifiedUser />
               <span className="text-xs">VERIFIED SELLER</span>
             </div>
           </div>
           <div className="text-md flex-grow pt-2 text-quaternary">Category</div>
-          <span className="font-bold text-tertiaryBg">Rs 58, 000</span>
+          <span className="font-bold text-tertiaryBg">Rs 53, 000</span>
           <span className="self-end text-sm text-quaternary">Just Now</span>
         </div>
       </div>
