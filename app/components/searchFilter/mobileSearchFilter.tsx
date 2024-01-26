@@ -1,7 +1,7 @@
+import ButtonCategory from '@/app/components/buttons/buttonCategory';
 import ButtonLocationAds from '@/app/components/buttons/buttonLocationAds';
 import SearchInput from '@/app/components/searchComponent/searchInput';
 import React from 'react';
-import { FaTag } from 'react-icons/fa';
 import { GiSettingsKnobs } from 'react-icons/gi';
 
 function MobileSearchFilter() {
@@ -12,12 +12,7 @@ function MobileSearchFilter() {
       </div>
       <div className="flex h-11 items-center justify-between divide-x shadow-md">
         <ButtonLocationAds />
-        <div className="flex items-center justify-center gap-2 px-4">
-          <span className="text-xl text-tertiaryBg">
-            <FaTag />
-          </span>
-          <span>Category</span>
-        </div>
+        <ButtonCategory />
         <div className="px-4">
           <span className="text-xl font-bold">
             <GiSettingsKnobs />
