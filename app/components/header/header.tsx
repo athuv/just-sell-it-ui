@@ -3,6 +3,7 @@ import { BiSolidChat } from 'react-icons/bi';
 import DrawerSidebar from '@/app/components/header/drawerSidebar';
 import LogoSvg from '@/app/components/logo/logoSvg';
 import ButtonLoginRegisterNavbar from '@/app/components/buttons/buttonLoginRegisterNavbar';
+import Link from 'next/link';
 
 function Header() {
   return (
@@ -13,9 +14,16 @@ function Header() {
         className="relative z-10 h-16 bg-white lg:border-b-2 lg:border-tertiaryBg"
       >
         <div className="flex h-full items-center justify-between overflow-hidden border-b-2 border-tertiaryBg px-4 py-1 pl-12 lg:mx-40 lg:border-none lg:px-3">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             <LogoSvg />
-            {/* <LogoText fontSize="text-2xl">J-S-I</LogoText> */}
+            <div className="flex items-center justify-center">
+              <button
+                type="button"
+                className="border border-tertiaryBg px-2 text-tertiaryBg"
+              >
+                <Link href="/ads">All Ads</Link>
+              </button>
+            </div>
           </div>
           <div className="flex gap-2 text-2xl text-tertiaryBg lg:gap-6">
             <button
