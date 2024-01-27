@@ -1,28 +1,56 @@
-import React from 'react';
-import { BiChevronRight } from 'react-icons/bi';
+'use client';
+
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { BiChevronRight, BiChevronDown } from 'react-icons/bi';
 
 function CategoryListing() {
-  const categories: string[] = [
-    'Electronics',
-    'Vehicles',
-    'Property',
-    'Trendings',
-  ];
+  const [whichOpen, setWhichOpen] = useState<number | undefined>(undefined);
 
+  interface Categories {
+    [key: string]: string[];
+  }
+
+  const categories: Categories = {
+    Electronics: ['mobiles', 'Laptops', 'Oven'],
+    Vehicles: ['Cars', 'Van', 'Lorry'],
+    Property: ['Land', 'House'],
+    Trending: ['Mobiles'],
+  };
+
+  /* eslint-disable react/no-array-index-key */
   return (
-    <div className="divide-y p-4 text-quaternary shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-      {categories.map((category, index) => (
-        <button
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          type="button"
-          className="flex w-full justify-between py-3 font-bold"
-        >
-          <span>{category} Ads</span>
-          <span className="text-2xl">
-            <BiChevronRight />
-          </span>
-        </button>
+    <div className=" p-4 text-quaternary shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+      {Object.entries(categories).map(([key, category], index) => (
+        <div key={index}>
+          <button
+            // eslint-disable-next-line react/no-array-index-key
+            key={key}
+            type="button"
+            className="flex w-full justify-between border-b py-3 font-bold"
+            onClick={() => {
+              setWhichOpen((prev) => (prev === index ? undefined : index));
+              // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+            }}
+          >
+            <span>{key} Ads</span>
+            <span className="text-2xl">
+              {whichOpen === index ? <BiChevronDown /> : <BiChevronRight />}
+            </span>
+          </button>
+          <div
+            className={`${
+              whichOpen === index ? 'flex' : 'hidden'
+            } flex-col text-sm`}
+          >
+            {category.map((cat, _index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <Link key={_index} className="pl-2" href="/">
+                {cat}
+              </Link>
+            ))}
+          </div>
+        </div>
       ))}
     </div>
   );
