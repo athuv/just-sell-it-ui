@@ -1,8 +1,8 @@
 import ButtonCategory from '@/app/components/buttons/buttonCategory';
+import ButtonFilter from '@/app/components/buttons/buttonFilter';
 import ButtonLocationAds from '@/app/components/buttons/buttonLocationAds';
 import SearchInput from '@/app/components/searchComponent/searchInput';
 import React from 'react';
-import { GiSettingsKnobs } from 'react-icons/gi';
 
 function MobileSearchFilter() {
   return (
@@ -13,11 +13,7 @@ function MobileSearchFilter() {
       <div className="flex h-11 items-center justify-between divide-x shadow-md">
         <ButtonLocationAds />
         <ButtonCategory />
-        <div className="px-4">
-          <span className="text-xl font-bold">
-            <GiSettingsKnobs />
-          </span>
-        </div>
+        <ButtonFilter />
       </div>
     </>
   );
