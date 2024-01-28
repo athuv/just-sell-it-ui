@@ -38,7 +38,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         <BreadcrumbsAds />
       </div>
 
-      <div className="lg:pt-8">
+      <div className="lg:px-40 lg:pt-8">
         <CategoryListing />
       </div>
     </main>
