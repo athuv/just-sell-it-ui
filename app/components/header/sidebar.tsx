@@ -1,4 +1,5 @@
 import ButtonLoginRegisterSidebar from '@/app/components/buttons/buttonLoginRegisterSidebar';
+import Link from 'next/link';
 import React, { Dispatch, SetStateAction } from 'react';
 import { BiPurchaseTagAlt, BiSolidXCircle } from 'react-icons/bi';
 
@@ -24,8 +25,8 @@ function Sidebar({
         >
           <BiSolidXCircle />
         </button>
-        <button
-          type="button"
+        <Link
+          href="/ads"
           aria-label="All Ads"
           className="flex items-center justify-center gap-2"
         >
@@ -33,7 +34,7 @@ function Sidebar({
             <BiPurchaseTagAlt />
           </span>
           <span>All Ads</span>
-        </button>
+        </Link>
         <ButtonLoginRegisterSidebar />
         <div className="flex w-full items-center justify-center gap-2 pb-1 pt-3">
           <div
