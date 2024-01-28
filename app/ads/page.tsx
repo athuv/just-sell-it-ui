@@ -12,7 +12,7 @@ function Allads() {
           Showing 1-25 of 341,969 ads
         </span>
       </div>
-      <div className="p my-2 flex  items-center justify-center bg-yellow-500 text-center ">
+      <div className="my-2 flex items-center justify-center bg-yellow-500 text-center">
         <Slider />
       </div>
     </div>

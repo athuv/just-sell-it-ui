@@ -39,7 +39,7 @@ function FilterContent({
           </div>
 
           <div>
-            <label className="flex flex-col ">
+            <label className="flex flex-col">
               <span className="text-sm">Filter Ads By:</span>
               <label className="flex items-center justify-start gap-2">
                 <input type="checkbox" name="urgent" />

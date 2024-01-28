@@ -1,8 +1,15 @@
 'use client';
 
-import FilterModal from '@/app/components/popup/filter/filterModal';
 import React, { useState } from 'react';
 import { GiSettingsKnobs } from 'react-icons/gi';
+import dynamic from 'next/dynamic';
+
+const FilterModal = dynamic(
+  () => import('@/app/components/popup/filter/filterModal'),
+  {
+    ssr: false,
+  },
+);
 
 function ButtonFilter() {
   const [IsModalOpen, setIsModalOpen] = useState<boolean>(false);

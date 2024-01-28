@@ -42,8 +42,8 @@ function Slider() {
   }
 
   return (
-    <div className="h-48 w-[343px] bg-cyan-700 lg:h-[306px] lg:w-[510px]">
-      <div className="relative flex h-48 w-[343px] overflow-hidden lg:h-[306px] lg:w-[510px]">
+    <div className="h-48 w-screen bg-cyan-700 lg:h-[306px] lg:w-[510px]">
+      <div className="relative flex h-48 w-screen overflow-hidden lg:h-[306px] lg:w-[510px]">
         <div className="absolute left-3 top-3 z-50">
           <div className="h-4 w-4">
             <Image

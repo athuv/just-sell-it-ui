@@ -27,7 +27,7 @@ function Modal({
             </button>
           </div>
 
-          <div className="flex h-full flex-col flex-nowrap content-center">
+          <div className="flex flex-col flex-nowrap content-center">
             {children}
           </div>
         </div>
