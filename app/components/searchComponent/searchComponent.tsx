@@ -11,7 +11,9 @@ function SearchComponent() {
             <div>
               <ButtonAllLocation />
             </div>
-            <SearchInput />
+            <div className="h-11 w-full md:h-14 md:w-[755px]">
+              <SearchInput />
+            </div>
           </div>
         </form>
       </div>

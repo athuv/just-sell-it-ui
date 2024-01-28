@@ -3,8 +3,8 @@ import { BiSearch } from 'react-icons/bi';
 
 function SearchInput() {
   return (
-    <div className="w-full md:flex md:justify-center">
-      <div className="flex h-11 items-center justify-center md:h-14 md:w-[755px] ">
+    <div className="h-full w-full md:flex md:justify-center">
+      <div className="flex h-full w-full items-center justify-center ">
         <input
           placeholder="Keyword"
           aria-label="Search Keyword"
