@@ -45,7 +45,11 @@ function CategoryListing() {
           >
             {category.map((cat, _index) => (
               // eslint-disable-next-line react/no-array-index-key
-              <Link key={_index} className="pl-2" href="/">
+              <Link
+                key={_index}
+                className="pl-2 text-link hover:text-tertiaryBg"
+                href="/"
+              >
                 {cat}
               </Link>
             ))}
