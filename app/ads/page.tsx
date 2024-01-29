@@ -1,4 +1,5 @@
-import Slider from '@/app/components/slider/slider';
+import Cars from '@/app/components/slider/carousel';
+// import Slider from '@/app/components/slider/slider';
 import React from 'react';
 
 function Allads() {
@@ -12,8 +13,9 @@ function Allads() {
           Showing 1-25 of 341,969 ads
         </span>
       </div>
-      <div className="my-2 flex items-center justify-center bg-yellow-500 text-center">
-        <Slider />
+      <div className="my-2 flex w-full items-center justify-center text-center sm:bg-secondaryBg">
+        {/* <Slider /> */}
+        <Cars />
       </div>
     </div>
   );
