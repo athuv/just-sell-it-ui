@@ -23,6 +23,9 @@ const config: Config = {
         success: '#22C55E',
         link: '#3b5999',
       },
+      screens: {
+        'header-btn-width': { min: '1024px', max: '1060px' },
+      },
     },
   },
   plugins: [],
