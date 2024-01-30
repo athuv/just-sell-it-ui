@@ -1,4 +1,4 @@
-import Cars from '@/app/components/slider/carousel';
+import Carousel from '@/app/components/slider/carousel';
 // import Slider from '@/app/components/slider/slider';
 import React from 'react';
 
@@ -15,7 +15,7 @@ function Allads() {
       </div>
       <div className="my-2 flex w-full items-center justify-center text-center sm:bg-secondaryBg">
         {/* <Slider /> */}
-        <Cars />
+        <Carousel />
       </div>
     </div>
   );

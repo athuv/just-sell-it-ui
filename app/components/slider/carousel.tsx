@@ -48,7 +48,7 @@ function SamplePrevArrow({
   );
 }
 
-export default function SimpleSlider() {
+export default function Carousel() {
   const slides: string[] = [
     '/ad-images/desktop-pic.jpg',
     '/ad-images/desktop-pic-2.jpg',

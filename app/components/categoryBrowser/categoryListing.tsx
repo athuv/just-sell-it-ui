@@ -12,17 +12,23 @@ function CategoryListing() {
   }
 
   const categories: Categories = {
-    Electronics: ['mobiles', 'Laptops', 'Oven'],
-    Vehicles: ['Cars', 'Van', 'Lorry'],
-    Property: ['Land', 'House'],
-    Trending: ['Mobiles'],
+    Electronics: ['mobiles', 'Laptops', 'Ovens', 'Cameras', 'TVs'],
+    Vehicles: ['Cars', 'Van', 'Lorry', 'Motobikes', 'Buses'],
+    Property: [
+      'Land for Sale',
+      'House for Sale',
+      'Apartments for Sale',
+      'Land Rentals',
+      'House Rentals',
+    ],
+    Trending: ['Mobiles', 'Furniture', 'Pets', 'Watches', 'Vehicles'],
   };
 
   /* eslint-disable react/no-array-index-key */
   return (
-    <div className="p-4 text-quaternary shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:flex lg:items-start lg:justify-evenly lg:gap-4">
+    <div className=" p-4 text-quaternary shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:flex lg:items-stretch lg:justify-evenly lg:gap-4">
       {Object.entries(categories).map(([key, category], index) => (
-        <div key={index}>
+        <div className="lg:flex-1 lg:bg-secondaryBg lg:p-4" key={index}>
           <button
             // eslint-disable-next-line react/no-array-index-key
             key={key}
@@ -41,13 +47,13 @@ function CategoryListing() {
           <div
             className={`${
               whichOpen === index ? 'flex' : 'hidden'
-            } flex-col text-sm lg:flex`}
+            } flex-col bg-secondaryBg py-2 text-sm lg:flex`}
           >
             {category.map((cat, _index) => (
               // eslint-disable-next-line react/no-array-index-key
               <Link
                 key={_index}
-                className="pl-2 text-link hover:text-tertiaryBg"
+                className=" px-2  text-link hover:text-tertiaryBg"
                 href="/"
               >
                 {cat}
