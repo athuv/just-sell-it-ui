@@ -6,6 +6,7 @@ import BreadcrumbsAds from '@/app/components/breadcrumbs/breadcrumbsAds';
 import CategoryListing from '@/app/components/categoryBrowser/categoryListing';
 import DesktopSearchFilter from '@/app/components/searchFilter/desktopSearchFilter';
 import DesktopFilterResult from '@/app/components/searchFilter/desktopFilterResult';
+import ButtonStickyPostAd from '@/app/components/buttons/buttonStickyPostAd';
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -46,6 +47,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <section className="lg:px-40 lg:pt-8">
         <CategoryListing />
       </section>
+      <ButtonStickyPostAd />
     </main>
   );
 }
