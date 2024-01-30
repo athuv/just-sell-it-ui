@@ -33,7 +33,7 @@ function CategoryListing() {
             // eslint-disable-next-line react/no-array-index-key
             key={key}
             type="button"
-            className="flex w-full justify-between border-b py-3 font-bold lg:items-start lg:border-b-0"
+            className="lg: flex w-full justify-between  border-b py-3 font-bold lg:items-center lg:justify-center lg:border-b-0"
             onClick={() => {
               setWhichOpen((prev) => (prev === index ? undefined : index));
               // eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -47,7 +47,7 @@ function CategoryListing() {
           <div
             className={`${
               whichOpen === index ? 'flex' : 'hidden'
-            } flex-col bg-secondaryBg py-2 text-sm lg:flex`}
+            } flex-col bg-secondaryBg py-2 text-sm lg:flex lg:items-center lg:justify-center`}
           >
             {category.map((cat, _index) => (
               // eslint-disable-next-line react/no-array-index-key
