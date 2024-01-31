@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} h-full`}>
+      <body className={`${roboto.className} flex h-screen flex-col`}>
         <Header />
         {children}
         {modal}
