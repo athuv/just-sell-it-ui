@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function NotFound() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center gap-4">
-      <div className="lg:p-8¬ flex w-full flex-col items-center justify-center gap-4 py-4 shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:w-fit">
+      <div className="flex w-full flex-col items-center justify-center gap-4 py-4 shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:w-fit lg:p-8">
         <p className="text-center text-2xl">
           The page you are looking for is unavailable
         </p>
