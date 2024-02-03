@@ -1,7 +1,7 @@
-import { type ModalToggleAndContent } from '@/lib/types';
+import { ModalToggleAndAddContent } from '@/lib/types';
 import { BiChevronRight } from 'react-icons/bi';
 
-function AreaContent({ addContent, toggleModal }: ModalToggleAndContent) {
+function AreaContent({ addContent, toggleModal }: ModalToggleAndAddContent) {
   const areas: string[] = ['Kandy City', 'Gampola', 'Nawalapitiya', 'Geli-Oya'];
   return (
     <ul className="p-4 text-quaternary">
