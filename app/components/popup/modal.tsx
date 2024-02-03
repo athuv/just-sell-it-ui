@@ -1,13 +1,12 @@
-import React, { Dispatch, SetStateAction } from 'react';
 import { createPortal } from 'react-dom';
 import { BiSolidXCircle } from 'react-icons/bi';
 
 function Modal({
   children,
-  setIsModalOpen,
+  toggleModal,
 }: {
   children: React.ReactNode;
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+  toggleModal: () => void;
 }) {
   return createPortal(
     <div className="fixed left-0 top-0 z-20 flex h-full w-screen flex-col justify-center overflow-hidden overflow-x-hidden bg-black bg-opacity-50">
@@ -19,7 +18,7 @@ function Modal({
               aria-label="Close Modal"
               className="text-3xl"
               onClick={() => {
-                setIsModalOpen(false);
+                toggleModal();
                 document.body.style.overflow = 'visible';
               }}
             >

@@ -1,13 +1,7 @@
-import { Dispatch, SetStateAction } from 'react';
+import { type ModalToggleAndContent } from '@/lib/types';
 import { BiChevronRight } from 'react-icons/bi';
 
-function AreaContent({
-  setSelectedArea,
-  setIsModalOpen,
-}: {
-  setSelectedArea: Dispatch<SetStateAction<string[] | undefined>>;
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-}) {
+function AreaContent({ addContent, toggleModal }: ModalToggleAndContent) {
   const areas: string[] = ['Kandy City', 'Gampola', 'Nawalapitiya', 'Geli-Oya'];
   return (
     <ul className="p-4 text-quaternary">
@@ -18,8 +12,8 @@ function AreaContent({
           // eslint-disable-next-line react/no-array-index-key
           key={index}
           onClick={() => {
-            setSelectedArea([index.toString(), _area]);
-            setIsModalOpen(false);
+            addContent({ contentType: 'area', id: index, value: _area });
+            toggleModal();
             document.body.style.overflow = 'visible';
           }}
         >

@@ -1,86 +1,83 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import { BiChevronRight } from 'react-icons/bi';
 import Image from 'next/image';
+import { ModalAddContent } from '@/lib/types';
 
-function MainCategoryContent({
-  setMainCategory,
-}: {
-  setMainCategory: Dispatch<SetStateAction<string[] | undefined>>;
-}) {
+function MainCategoryContent({ addContent }: ModalAddContent) {
   interface MainCategory {
-    id: string;
+    id: number;
     name: string;
     icon: string;
   }
 
   const mainCategory: MainCategory[] = [
     {
-      id: '1',
+      id: 1,
       name: 'Electronics',
       icon: 'phone-android.svg',
     },
     {
-      id: '2',
+      id: 2,
       name: 'Property',
       icon: 'property.svg',
     },
     {
-      id: '4',
+      id: 3,
       name: 'Vechicles',
       icon: 'vechicles.svg',
     },
     {
-      id: '5',
+      id: 4,
       name: 'Home & Garden',
       icon: 'home-and-garden.svg',
     },
     {
-      id: '6',
+      id: 5,
       name: 'Services',
       icon: 'services.svg',
     },
     {
-      id: '7',
+      id: 6,
       name: 'Business & Industry',
       icon: 'business-and-industry.svg',
     },
     {
-      id: '8',
+      id: 7,
       name: 'Hobby, Sports & Kids',
       icon: 'hobby-sports-kids.svg',
     },
     {
-      id: '9',
+      id: 8,
       name: 'Vechicles',
       icon: 'jobs.svg',
     },
     {
-      id: '10',
+      id: 9,
       name: 'Animals',
       icon: 'animals.svg',
     },
     {
-      id: '11',
+      id: 10,
       name: 'Fashion & Beauty',
       icon: 'fashion-and-beauty.svg',
     },
     {
-      id: '12',
+      id: 11,
       name: 'Education',
       icon: 'education.svg',
     },
     {
-      id: '13',
+      id: 12,
       name: 'Other',
       icon: 'other.svg',
     },
     {
-      id: '14',
+      id: 13,
       name: 'Essentials',
       icon: 'essentials.svg',
     },
     {
-      id: '15',
+      id: 14,
       name: 'Agriculture',
       icon: 'agriculture.svg',
     },
@@ -94,7 +91,13 @@ function MainCategoryContent({
           className="flex w-full justify-between border-b py-3"
           // eslint-disable-next-line react/no-array-index-key
           key={category.id}
-          onClick={() => setMainCategory([category.id, category.name])}
+          onClick={() =>
+            addContent({
+              contentType: 'mainCategory',
+              id: category.id,
+              value: category.name,
+            })
+          }
         >
           <div className="flex items-center justify-center gap-4">
             <div className="flex h-4 w-4 items-center justify-center">

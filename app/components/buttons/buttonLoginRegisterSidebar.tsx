@@ -1,23 +1,30 @@
+import useModal from '@/app/_hooks/useModal';
 import ModalLoginSignup from '@/app/components/popup/login-signup/modalLoginSignup';
-import React, { useState } from 'react';
+import React from 'react';
 import { BiLogIn } from 'react-icons/bi';
 
 function ButtonLoginRegisterSidebar() {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const { isModalOpen, toggleModal, addContent, contents } = useModal();
   return (
     <>
       <button
         type="button"
         aria-label="Login or Register"
         className="flex items-center justify-center gap-2"
-        onClick={() => setIsModalOpen(true)}
+        onClick={() => toggleModal()}
       >
         <span className="text-tertiaryBg">
           <BiLogIn />
         </span>
         <span>Login/Register</span>
       </button>
-      {isModalOpen && <ModalLoginSignup setIsModalOpen={setIsModalOpen} />}
+      {isModalOpen && (
+        <ModalLoginSignup
+          addContent={addContent}
+          contents={contents}
+          toggleModal={toggleModal}
+        />
+      )}
     </>
   );
 }

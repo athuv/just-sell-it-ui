@@ -1,15 +1,17 @@
 'use client';
 
+import useModal from '@/app/_hooks/useModal';
 import CategoryModal from '@/app/components/popup/category/categoryModal';
 import { useRouter, useParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FaTag } from 'react-icons/fa';
 
 function ButtonCategory() {
-  const [IsModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedCategory, setSelectedCategory] = useState<
-    string[] | undefined
-  >(undefined);
+  const { isModalOpen, toggleModal, contents, addContent } = useModal();
+
+  const selectedCategory = contents?.find(
+    (content) => content.contentType === 'subCategory',
+  );
 
   const router = useRouter();
   const { area, category } = useParams();
@@ -17,7 +19,7 @@ function ButtonCategory() {
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     selectedCategory &&
-      router.push(`/ads/${area || 'all-location'}/${selectedCategory[1]}`);
+      router.push(`/ads/${area || 'all-location'}/${selectedCategory.value}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
@@ -27,7 +29,7 @@ function ButtonCategory() {
         type="button"
         className="flex  items-center justify-center gap-2 overflow-hidden px-4"
         onClick={() => {
-          setIsModalOpen(true);
+          toggleModal();
           document.body.style.overflow = 'hidden';
         }}
       >
@@ -38,10 +40,11 @@ function ButtonCategory() {
           {category ? decodeURIComponent(category.toString()) : 'Category'}
         </span>
       </button>
-      {IsModalOpen && (
+      {isModalOpen && (
         <CategoryModal
-          setSelectedCategory={setSelectedCategory}
-          setIsModalOpen={setIsModalOpen}
+          addContent={addContent}
+          toggleModal={toggleModal}
+          contents={contents}
         />
       )}
     </>

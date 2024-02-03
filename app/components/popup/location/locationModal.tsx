@@ -1,29 +1,37 @@
-import React, { useState, Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import AreaContent from '@/app/components/popup/location/areaContent';
 import DistrictContent from '@/app/components/popup/location/districtContent';
 import { BiArrowBack } from 'react-icons/bi';
 import Modal from '@/app/components/popup/modal';
+import { IModalWithoutIsModalOpen } from '@/lib/types';
 
 function LocationModal({
-  setIsModalOpen,
-  setSelectedArea,
-}: {
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-  setSelectedArea: Dispatch<SetStateAction<string[] | undefined>>;
-}) {
-  const [district, setDistrict] = useState<string[] | undefined>(undefined);
+  toggleModal,
+  addContent,
+  contents,
+}: IModalWithoutIsModalOpen) {
+  const districtContent = contents?.find(
+    (content) => content.contentType === 'district',
+  );
 
   return (
-    <Modal setIsModalOpen={setIsModalOpen}>
+    <Modal toggleModal={toggleModal}>
       <div className="flex justify-between">
         <div className="text-2xl">
-          {!district && <h1>Select District</h1>}
-          {district && (
+          {!districtContent && <h1>Select District</h1>}
+          {districtContent && (
             <div className="flex gap-2">
               <button
                 aria-label="Back to District"
                 type="button"
-                onClick={() => setDistrict(undefined)}
+                onClick={() =>
+                  addContent({
+                    contentType: 'district',
+                    id: 0,
+                    value: '',
+                    remove: true,
+                  })
+                }
               >
                 <BiArrowBack />
               </button>
@@ -34,12 +42,9 @@ function LocationModal({
       </div>
       <div>
         <div className="pt-4">
-          {!district && <DistrictContent setDistrict={setDistrict} />}
-          {district && (
-            <AreaContent
-              setIsModalOpen={setIsModalOpen}
-              setSelectedArea={setSelectedArea}
-            />
+          {!districtContent && <DistrictContent addContent={addContent} />}
+          {districtContent && (
+            <AreaContent toggleModal={toggleModal} addContent={addContent} />
           )}
         </div>
       </div>

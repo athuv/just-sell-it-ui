@@ -1,12 +1,9 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import SignupForm from '@/app/login-signup/signupForm';
+import { ModalAddContent } from '@/lib/types';
 
-function SignupContent({
-  setContent,
-}: {
-  setContent: Dispatch<SetStateAction<string>>;
-}) {
+function SignupContent({ addContent }: ModalAddContent) {
   return (
     <div
       role="contentinfo"
@@ -29,7 +26,19 @@ function SignupContent({
             <button
               type="button"
               className="text-primaryB w-full max-w-md rounded-md bg-quaternary py-2 text-primaryBg"
-              onClick={() => setContent('login')}
+              onClick={() => {
+                addContent({
+                  contentType: 'login',
+                  id: 0,
+                  value: '',
+                });
+                addContent({
+                  contentType: 'signUp',
+                  id: 0,
+                  value: '',
+                  remove: true,
+                });
+              }}
             >
               Login
             </button>

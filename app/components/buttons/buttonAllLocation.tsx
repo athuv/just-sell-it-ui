@@ -1,15 +1,15 @@
 'use client';
 
+import useModal from '@/app/_hooks/useModal';
 import LocationModal from '@/app/components/popup/location/locationModal';
-import { useState } from 'react';
 import { BiSolidLocationPlus } from 'react-icons/bi';
 
 function ButtonAllLocation() {
-  const [IsModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedArea, setSelectedArea] = useState<string[] | undefined>(
-    undefined,
-  );
+  const { isModalOpen, toggleModal, contents, addContent } = useModal();
 
+  const areaContent = contents?.find(
+    (content) => content.contentType === 'area',
+  );
   return (
     <>
       <button
@@ -17,18 +17,19 @@ function ButtonAllLocation() {
         type="button"
         className="flex items-center justify-center gap-2 rounded-md bg-quinary p-2 text-lg text-primaryBg"
         onClick={() => {
-          setIsModalOpen(true);
+          toggleModal();
           document.body.style.overflow = 'hidden';
         }}
       >
         <BiSolidLocationPlus />
-        <span>{selectedArea ? selectedArea[1] : 'ALL LOCATION'}</span>
+        <span>{areaContent ? areaContent.value : 'ALL LOCATION'}</span>
         <input readOnly hidden name="area" value="" />
       </button>
-      {IsModalOpen && (
+      {isModalOpen && (
         <LocationModal
-          setSelectedArea={setSelectedArea}
-          setIsModalOpen={setIsModalOpen}
+          contents={contents}
+          addContent={addContent}
+          toggleModal={toggleModal}
         />
       )}
     </>

@@ -1,11 +1,11 @@
 'use client';
 
+import useModal from '@/app/_hooks/useModal';
 import ModalLoginSignup from '@/app/components/popup/login-signup/modalLoginSignup';
-import React, { useState } from 'react';
 import { BiSolidUser } from 'react-icons/bi';
 
 function ButtonLoginRegisterNavbar() {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const { isModalOpen, toggleModal, addContent, contents } = useModal();
   return (
     <>
       <button
@@ -13,7 +13,7 @@ function ButtonLoginRegisterNavbar() {
         aria-label="Login or Register"
         className="flex items-center justify-center gap-1 text-lg"
         onClick={() => {
-          setIsModalOpen(true);
+          toggleModal();
           document.body.style.overflow = 'hidden';
           document.body.setAttribute('aria-hidden', 'true');
         }}
@@ -21,7 +21,13 @@ function ButtonLoginRegisterNavbar() {
         <BiSolidUser />
         <span className="hidden lg:inline-block">Login/Register</span>
       </button>
-      {isModalOpen && <ModalLoginSignup setIsModalOpen={setIsModalOpen} />}
+      {isModalOpen && (
+        <ModalLoginSignup
+          toggleModal={toggleModal}
+          addContent={addContent}
+          contents={contents}
+        />
+      )}
     </>
   );
 }

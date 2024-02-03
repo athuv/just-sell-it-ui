@@ -1,23 +1,26 @@
 'use client';
 
 import LocationModal from '@/app/components/popup/location/locationModal';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FaLocationDot } from 'react-icons/fa6';
 import { useRouter, useParams } from 'next/navigation';
+import useModal from '@/app/_hooks/useModal';
 
 function ButtonLocationAds() {
-  const [IsModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedArea, setSelectedArea] = useState<string[] | undefined>(
-    undefined,
+  const { isModalOpen, toggleModal, contents, addContent } = useModal();
+
+  const areaContent = contents?.find(
+    (content) => content.contentType === 'area',
   );
+
   const router = useRouter();
   const { area, category } = useParams();
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    selectedArea && router.push(`/ads/${selectedArea[1]}/${category || ''}`);
+    areaContent && router.push(`/ads/${areaContent.value}/${category || ''}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedArea]);
+  }, [areaContent]);
 
   return (
     <>
@@ -26,7 +29,7 @@ function ButtonLocationAds() {
         aria-label="Location"
         className="flex items-center justify-center gap-2 overflow-hidden px-4"
         onClick={() => {
-          setIsModalOpen(true);
+          toggleModal();
           document.body.style.overflow = 'hidden';
         }}
       >
@@ -42,10 +45,11 @@ function ButtonLocationAds() {
             : 'Location'}
         </span>
       </button>
-      {IsModalOpen && (
+      {isModalOpen && (
         <LocationModal
-          setSelectedArea={setSelectedArea}
-          setIsModalOpen={setIsModalOpen}
+          contents={contents}
+          addContent={addContent}
+          toggleModal={toggleModal}
         />
       )}
     </>

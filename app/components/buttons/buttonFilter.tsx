@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
 import { GiSettingsKnobs } from 'react-icons/gi';
 import dynamic from 'next/dynamic';
+import useModal from '@/app/_hooks/useModal';
 
 const FilterModal = dynamic(
   () => import('@/app/components/popup/filter/filterModal'),
@@ -12,12 +12,12 @@ const FilterModal = dynamic(
 );
 
 function ButtonFilter() {
-  const [IsModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const { isModalOpen, toggleModal } = useModal();
   return (
     <>
       <button
         onClick={() => {
-          setIsModalOpen(true);
+          toggleModal();
           document.body.style.overflow = 'hidden';
         }}
         type="button"
@@ -28,7 +28,7 @@ function ButtonFilter() {
           <GiSettingsKnobs />
         </span>
       </button>
-      {IsModalOpen && <FilterModal setIsModalOpen={setIsModalOpen} />}
+      {isModalOpen && <FilterModal toggleModal={toggleModal} />}
     </>
   );
 }

@@ -1,13 +1,11 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import { ModalToggleAndAddContent } from '@/lib/types';
+import React from 'react';
 import { BiChevronRight } from 'react-icons/bi';
 
 function SubCategoryContent({
-  setSelectedCategory,
-  setIsModalOpen,
-}: {
-  setSelectedCategory: Dispatch<SetStateAction<string[] | undefined>>;
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-}) {
+  addContent,
+  toggleModal,
+}: ModalToggleAndAddContent) {
   const subCategories: string[] = [
     'Mobile Phones',
     'Mobile Phone Accessories',
@@ -24,8 +22,12 @@ function SubCategoryContent({
           // eslint-disable-next-line react/no-array-index-key
           key={index}
           onClick={() => {
-            setSelectedCategory([index.toString(), _subCategory]);
-            setIsModalOpen(false);
+            addContent({
+              contentType: 'subCategory',
+              id: index,
+              value: _subCategory,
+            });
+            toggleModal();
             document.body.style.overflow = 'visible';
           }}
         >

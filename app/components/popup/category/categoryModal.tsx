@@ -1,22 +1,24 @@
 import MainCategoryContent from '@/app/components/popup/category/mainCategoryContent';
 import SubCategoryContent from '@/app/components/popup/category/subCategoryContent';
 import Modal from '@/app/components/popup/modal';
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import { IModalWithoutIsModalOpen } from '@/lib/types';
+import React from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 
 function CategoryModal({
-  setIsModalOpen,
-  setSelectedCategory,
-}: {
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-  setSelectedCategory: Dispatch<SetStateAction<string[] | undefined>>;
-}) {
-  const [mainCategory, setMainCategory] = useState<string[] | undefined>(
-    undefined,
+  toggleModal,
+  addContent,
+  contents,
+}: IModalWithoutIsModalOpen) {
+  // const [mainCategory, setMainCategory] = useState<string[] | undefined>(
+  //   undefined,
+  // );
+  const mainCategory = contents?.find(
+    (content) => content.contentType === 'mainCategory',
   );
 
   return (
-    <Modal setIsModalOpen={setIsModalOpen}>
+    <Modal toggleModal={toggleModal}>
       <div className="flex justify-between">
         <div className="text-2xl">
           {!mainCategory && <h1>Select Category</h1>}
@@ -25,7 +27,14 @@ function CategoryModal({
               <button
                 aria-label="Back to District"
                 type="button"
-                onClick={() => setMainCategory(undefined)}
+                onClick={() =>
+                  addContent({
+                    contentType: 'mainCategory',
+                    id: 0,
+                    value: '',
+                    remove: true,
+                  })
+                }
               >
                 <BiArrowBack />
               </button>
@@ -36,13 +45,11 @@ function CategoryModal({
       </div>
       <div>
         <div className="pt-4">
-          {!mainCategory && (
-            <MainCategoryContent setMainCategory={setMainCategory} />
-          )}
+          {!mainCategory && <MainCategoryContent addContent={addContent} />}
           {mainCategory && (
             <SubCategoryContent
-              setIsModalOpen={setIsModalOpen}
-              setSelectedCategory={setSelectedCategory}
+              toggleModal={toggleModal}
+              addContent={addContent}
             />
           )}
         </div>

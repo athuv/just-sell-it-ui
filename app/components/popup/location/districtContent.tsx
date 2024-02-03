@@ -1,11 +1,7 @@
-import { Dispatch, SetStateAction } from 'react';
+import { ModalAddContent } from '@/lib/types';
 import { BiChevronRight } from 'react-icons/bi';
 
-function DistrictContent({
-  setDistrict,
-}: {
-  setDistrict: Dispatch<SetStateAction<string[] | undefined>>;
-}) {
+function DistrictContent({ addContent }: ModalAddContent) {
   const sriLankaDistricts = [
     'Ampara',
     'Anuradhapura',
@@ -46,7 +42,9 @@ function DistrictContent({
           className="flex w-full justify-between border-b py-3"
           // eslint-disable-next-line react/no-array-index-key
           key={index}
-          onClick={() => setDistrict([index.toString(), district])}
+          onClick={() =>
+            addContent({ contentType: 'district', id: index, value: district })
+          }
         >
           <span>{district}</span>
           <span className="text-2xl">

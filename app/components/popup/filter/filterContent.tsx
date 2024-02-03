@@ -1,11 +1,7 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import { ModalToggle } from '@/lib/types';
 import { useRouter } from 'next/navigation';
 
-function FilterContent({
-  setIsModalOpen,
-}: {
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-}) {
+function FilterContent({ toggleModal }: ModalToggle) {
   const router = useRouter();
 
   function onsubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -18,7 +14,7 @@ function FilterContent({
 
     const queryString = new URLSearchParams(queryParams).toString();
     router.push(`?${queryString}`);
-    setIsModalOpen(false);
+    toggleModal();
     document.body.style.overflow = 'visible';
   }
 

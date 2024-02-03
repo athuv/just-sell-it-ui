@@ -1,13 +1,10 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 import LoginForm from '@/app/login-signup/loginForm';
+import { ModalAddContent } from '@/lib/types';
 
-function EmailLoginContent({
-  setContent,
-}: {
-  setContent: Dispatch<SetStateAction<string>>;
-}) {
+function EmailLoginContent({ addContent }: ModalAddContent) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-center">
@@ -28,7 +25,19 @@ function EmailLoginContent({
             <button
               type="button"
               className="w-full max-w-md rounded-md border border-quaternary bg-quaternary py-2 text-primaryBg"
-              onClick={() => setContent('signup')}
+              onClick={() => {
+                addContent({
+                  contentType: 'signUp',
+                  id: 0,
+                  value: '',
+                });
+                addContent({
+                  contentType: 'login',
+                  id: 0,
+                  value: '',
+                  remove: true,
+                });
+              }}
             >
               Signup
             </button>

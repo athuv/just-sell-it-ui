@@ -1,21 +1,26 @@
 'use client';
 
 import Modal from '@/app/components/popup/modal';
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React from 'react';
 import { createPortal } from 'react-dom';
 import EmailLoginContent from '@/app/components/popup/login-signup/emailLoginContent';
 import SignupContent from '@/app/components/popup/login-signup/signupContent';
+import { IModalWithoutIsModalOpen } from '@/lib/types';
 
 function ModalLoginSignup({
-  setIsModalOpen,
-}: {
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-}) {
-  const [content, setContent] = useState<string>('login');
+  toggleModal,
+  addContent,
+  contents,
+}: IModalWithoutIsModalOpen) {
+  const login = contents?.find((content) => content.contentType === 'login');
+  const signup = contents?.find((content) => content.contentType === 'signUp');
+
   return createPortal(
-    <Modal setIsModalOpen={setIsModalOpen}>
-      {content === 'login' && <EmailLoginContent setContent={setContent} />}
-      {content === 'signup' && <SignupContent setContent={setContent} />}
+    <Modal toggleModal={toggleModal}>
+      {(login || (!login && !signup)) && (
+        <EmailLoginContent addContent={addContent} />
+      )}
+      {signup && <SignupContent addContent={addContent} />}
     </Modal>,
     document.getElementById('modal-root')!,
   );
