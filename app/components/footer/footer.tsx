@@ -36,7 +36,7 @@ function Footer() {
                     href="/"
                   >
                     <Image
-                      src="download-on-the-app-store.svg"
+                      src="/download-on-the-app-store.svg"
                       alt="Get it on apple app store"
                       height={40}
                       width={119.66407}
@@ -50,7 +50,7 @@ function Footer() {
               <h1 className="hidden text-center font-bold lg:block lg:text-start">
                 Connect With Us
               </h1>
-              <Link className="text-link flex items-center gap-1 pl-2" href="/">
+              <Link className="flex items-center gap-1 pl-2 text-link" href="/">
                 <div className="text-3xl">
                   <BiLogoFacebookSquare />
                 </div>
