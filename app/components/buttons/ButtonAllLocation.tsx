@@ -1,7 +1,7 @@
 'use client';
 
 import useModal from '@/app/_hooks/useModal';
-import LocationModal from '@/app/components/popup/location/locationModal';
+import LocationModal from '@/app/components/popup/location/LocationModal';
 import { BiSolidLocationPlus } from 'react-icons/bi';
 
 function ButtonAllLocation() {

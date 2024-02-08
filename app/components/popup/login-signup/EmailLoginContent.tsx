@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import LoginForm from '@/app/login-signup/loginForm';
+import LoginForm from '@/app/login-signup/LoginForm';
 import { ModalAddContent } from '@/lib/types';
 
 function EmailLoginContent({ addContent }: ModalAddContent) {

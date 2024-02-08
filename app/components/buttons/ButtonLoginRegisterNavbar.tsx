@@ -1,7 +1,7 @@
 'use client';
 
 import useModal from '@/app/_hooks/useModal';
-import ModalLoginSignup from '@/app/components/popup/login-signup/modalLoginSignup';
+import ModalLoginSignup from '@/app/components/popup/login-signup/ModalLoginSignup';
 import { BiSolidUser } from 'react-icons/bi';
 
 function ButtonLoginRegisterNavbar() {

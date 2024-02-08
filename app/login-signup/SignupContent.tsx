@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import SignupForm from '@/app/login-signup/signupForm';
+import SignupForm from '@/app/login-signup/SignupForm';
 
 function SignupContent() {
   return (

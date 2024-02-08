@@ -1,5 +1,5 @@
-import FilterContent from '@/app/components/popup/filter/filterContent';
-import Modal from '@/app/components/popup/modal';
+import FilterContent from '@/app/components/popup/filter/FilterContent';
+import Modal from '@/app/components/popup/Modal';
 import { ModalToggle } from '@/lib/types';
 
 function FilterModal({ toggleModal }: ModalToggle) {

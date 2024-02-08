@@ -1,7 +1,7 @@
 'use client';
 
 import useModal from '@/app/_hooks/useModal';
-import CategoryModal from '@/app/components/popup/category/categoryModal';
+import CategoryModal from '@/app/components/popup/category/CategoryModal';
 import { useRouter, useParams } from 'next/navigation';
 import React, { useEffect } from 'react';
 import { FaTag } from 'react-icons/fa';

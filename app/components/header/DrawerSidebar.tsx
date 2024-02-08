@@ -1,7 +1,7 @@
 'use client';
 
-import HumburgerMenuButton from '@/app/components/buttons/hamburgerMenuButton';
-import Sidebar from '@/app/components/header/sidebar';
+import HumburgerMenuButton from '@/app/components/buttons/HamburgerMenuButton';
+import Sidebar from '@/app/components/header/Sidebar';
 import React, { useState } from 'react';
 
 function DrawerSidebar() {

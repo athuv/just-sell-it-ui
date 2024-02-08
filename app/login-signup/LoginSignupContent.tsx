@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import LoginForm from '@/app/login-signup/loginForm';
-import SignupForm from '@/app/login-signup/signupForm';
+import LoginForm from '@/app/login-signup/LoginForm';
+import SignupForm from '@/app/login-signup/SignupForm';
 
 function LoginSignupContent() {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import { BiSolidChat } from 'react-icons/bi';
-import DrawerSidebar from '@/app/components/header/drawerSidebar';
-import LogoSvg from '@/app/components/logo/logoSvg';
-import ButtonLoginRegisterNavbar from '@/app/components/buttons/buttonLoginRegisterNavbar';
+import DrawerSidebar from '@/app/components/header/DrawerSidebar';
+import LogoSvg from '@/app/components/logo/LogoSvg';
+import ButtonLoginRegisterNavbar from '@/app/components/buttons/ButtonLoginRegisterNavbar';
 import Link from 'next/link';
 
 function Header() {
@@ -13,7 +13,7 @@ function Header() {
         aria-label="Global Navigation"
         className="relative z-10 h-16 bg-white lg:border-b-2 lg:border-tertiaryBg"
       >
-        <div className="header-btn-width:mx-20 flex h-full items-center justify-between overflow-hidden border-b-2 border-tertiaryBg px-4 py-1 pl-12 lg:mx-40 lg:border-none lg:px-3">
+        <div className="flex h-full items-center justify-between overflow-hidden border-b-2 border-tertiaryBg px-4 py-1 pl-12 lg:mx-40 lg:border-none lg:px-3 header-btn-width:mx-20">
           <div className="flex items-center gap-4">
             <LogoSvg />
             <div className="hidden items-center justify-center lg:flex">

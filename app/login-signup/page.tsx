@@ -1,6 +1,6 @@
-import LoginContent from '@/app/login-signup/loginContent';
-import LoginSignupContent from '@/app/login-signup/loginSignupContent';
-import SignupContent from '@/app/login-signup/signupContent';
+import LoginContent from '@/app/login-signup/LoginContent';
+import LoginSignupContent from '@/app/login-signup/LoginSignupContent';
+import SignupContent from '@/app/login-signup/SignupContent';
 import React from 'react';
 
 function LoginSignup({ searchParams }: { searchParams: { signup: string } }) {

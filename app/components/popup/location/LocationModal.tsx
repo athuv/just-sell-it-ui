@@ -1,8 +1,8 @@
 import React from 'react';
-import AreaContent from '@/app/components/popup/location/areaContent';
-import DistrictContent from '@/app/components/popup/location/districtContent';
+import AreaContent from '@/app/components/popup/location/AreaContent';
+import DistrictContent from '@/app/components/popup/location/DistrictContent';
 import { BiArrowBack } from 'react-icons/bi';
-import Modal from '@/app/components/popup/modal';
+import Modal from '@/app/components/popup/Modal';
 import { IModalWithoutIsModalOpen } from '@/lib/types';
 
 function LocationModal({

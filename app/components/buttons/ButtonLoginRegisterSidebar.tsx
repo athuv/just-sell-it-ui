@@ -1,5 +1,5 @@
 import useModal from '@/app/_hooks/useModal';
-import ModalLoginSignup from '@/app/components/popup/login-signup/modalLoginSignup';
+import ModalLoginSignup from '@/app/components/popup/login-signup/ModalLoginSignup';
 import React from 'react';
 import { BiLogIn } from 'react-icons/bi';
 

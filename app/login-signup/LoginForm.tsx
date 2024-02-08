@@ -1,7 +1,7 @@
 'use client';
 
-import InputErrorMessage from '@/app/components/error/inputErrorMessage';
-import FormInput from '@/app/components/input/formInput';
+import InputErrorMessage from '@/app/components/error/InputErrorMessage';
+import FormInput from '@/app/components/input/FormInput';
 import setServerError from '@/lib/react-hook-form/setServerError';
 import { TLoginSchema, loginSchema } from '@/lib/zodSchema/loginSchema';
 import { zodResolver } from '@hookform/resolvers/zod';

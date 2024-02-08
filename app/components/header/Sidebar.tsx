@@ -1,4 +1,4 @@
-import ButtonLoginRegisterSidebar from '@/app/components/buttons/buttonLoginRegisterSidebar';
+import ButtonLoginRegisterSidebar from '@/app/components/buttons/ButtonLoginRegisterSidebar';
 import Link from 'next/link';
 import React, { Dispatch, SetStateAction } from 'react';
 import { BiPurchaseTagAlt, BiSolidXCircle } from 'react-icons/bi';

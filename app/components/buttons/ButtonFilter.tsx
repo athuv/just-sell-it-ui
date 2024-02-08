@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import useModal from '@/app/_hooks/useModal';
 
 const FilterModal = dynamic(
-  () => import('@/app/components/popup/filter/filterModal'),
+  () => import('@/app/components/popup/filter/FilterModal'),
   {
     ssr: false,
   },

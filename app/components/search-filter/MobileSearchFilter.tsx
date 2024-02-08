@@ -1,7 +1,7 @@
-import ButtonCategory from '@/app/components/buttons/buttonCategory';
-import ButtonFilter from '@/app/components/buttons/buttonFilter';
-import ButtonLocationAds from '@/app/components/buttons/buttonLocationAds';
-import SearchInput from '@/app/components/searchComponent/searchInput';
+import ButtonCategory from '@/app/components/buttons/ButtonCategory';
+import ButtonFilter from '@/app/components/buttons/ButtonFilter';
+import ButtonLocationAds from '@/app/components/buttons/ButtonLocationAds';
+import SearchInput from '@/app/components/search-component/SearchInput';
 import React from 'react';
 
 function MobileSearchFilter() {

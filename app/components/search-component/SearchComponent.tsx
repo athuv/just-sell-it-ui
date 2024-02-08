@@ -1,5 +1,5 @@
-import ButtonAllLocation from '@/app/components/buttons/buttonAllLocation';
-import SearchInput from '@/app/components/searchComponent/searchInput';
+import ButtonAllLocation from '@/app/components/buttons/ButtonAllLocation';
+import SearchInput from '@/app/components/search-component/SearchInput';
 import React from 'react';
 
 function SearchComponent() {

@@ -1,6 +1,6 @@
-import ButtonCategory from '@/app/components/buttons/buttonCategory';
-import ButtonLocationAds from '@/app/components/buttons/buttonLocationAds';
-import SearchInput from '@/app/components/searchComponent/searchInput';
+import ButtonCategory from '@/app/components/buttons/ButtonCategory';
+import ButtonLocationAds from '@/app/components/buttons/ButtonLocationAds';
+import SearchInput from '@/app/components/search-component/SearchInput';
 import React from 'react';
 
 function DesktopSearchFilter() {

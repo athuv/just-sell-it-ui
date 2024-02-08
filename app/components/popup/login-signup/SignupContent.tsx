@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import SignupForm from '@/app/login-signup/signupForm';
+import SignupForm from '@/app/login-signup/SignupForm';
 import { ModalAddContent } from '@/lib/types';
 
 function SignupContent({ addContent }: ModalAddContent) {

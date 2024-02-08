@@ -1,7 +1,7 @@
-import PostAdandJob from '@/app/(home)/postAdandJob';
-import Quicklinks from '@/app/(home)/quicklinks';
-import CategoryBrowserComponent from '@/app/components/categoryBrowser/categoryBrowserComponent';
-import SearchComponent from '@/app/components/searchComponent/searchComponent';
+import PostAdandJob from '@/app/(home)/PostAdandJob';
+import Quicklinks from '@/app/(home)/Quicklinks';
+import CategoryBrowserComponent from '@/app/components/category-browser/CategoryBrowserComponent';
+import SearchComponent from '@/app/components/search-component/SearchComponent';
 
 export default function Home() {
   return (

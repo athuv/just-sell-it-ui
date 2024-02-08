@@ -1,6 +1,6 @@
-import MainCategoryContent from '@/app/components/popup/category/mainCategoryContent';
-import SubCategoryContent from '@/app/components/popup/category/subCategoryContent';
-import Modal from '@/app/components/popup/modal';
+import MainCategoryContent from '@/app/components/popup/category/MainCategoryContent';
+import SubCategoryContent from '@/app/components/popup/category/SubCategoryContent';
+import Modal from '@/app/components/popup/Modal';
 import { IModalWithoutIsModalOpen } from '@/lib/types';
 import React from 'react';
 import { BiArrowBack } from 'react-icons/bi';

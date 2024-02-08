@@ -1,10 +1,10 @@
 'use client';
 
-import Modal from '@/app/components/popup/modal';
+import Modal from '@/app/components/popup/Modal';
 import React from 'react';
 import { createPortal } from 'react-dom';
-import EmailLoginContent from '@/app/components/popup/login-signup/emailLoginContent';
-import SignupContent from '@/app/components/popup/login-signup/signupContent';
+import EmailLoginContent from '@/app/components/popup/login-signup/EmailLoginContent';
+import SignupContent from '@/app/components/popup/login-signup/SignupContent';
 import { IModalWithoutIsModalOpen } from '@/lib/types';
 
 function ModalLoginSignup({

@@ -1,6 +1,6 @@
 'use client';
 
-import LocationModal from '@/app/components/popup/location/locationModal';
+import LocationModal from '@/app/components/popup/location/LocationModal';
 import React, { useEffect } from 'react';
 import { FaLocationDot } from 'react-icons/fa6';
 import { useRouter, useParams } from 'next/navigation';

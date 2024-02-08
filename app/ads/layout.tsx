@@ -1,12 +1,12 @@
-import MobileSearchFilter from '@/app/components/searchFilter/mobileSearchFilter';
-import ItemCard from '@/app/components/ItemCard/ItemCard';
-import Pagination from '@/app/components/pagination/pagination';
+import MobileSearchFilter from '@/app/components/search-filter/MobileSearchFilter';
+import ItemCard from '@/app/components/Item-card/ItemCard';
+import Pagination from '@/app/components/pagination/Pagination';
 import React from 'react';
-import BreadcrumbsAds from '@/app/components/breadcrumbs/breadcrumbsAds';
-import CategoryListing from '@/app/components/categoryBrowser/categoryListing';
-import DesktopSearchFilter from '@/app/components/searchFilter/desktopSearchFilter';
-import DesktopFilterResult from '@/app/components/searchFilter/desktopFilterResult';
-import ButtonStickyPostAd from '@/app/components/buttons/buttonStickyPostAd';
+import BreadcrumbsAds from '@/app/components/breadcrumbs/BreadcrumbsAds';
+import CategoryListing from '@/app/components/category-browser/CategoryListing';
+import DesktopSearchFilter from '@/app/components/search-filter/DesktopSearchFilter';
+import DesktopFilterResult from '@/app/components/search-filter/DesktopFilterResult';
+import ButtonStickyPostAd from '@/app/components/buttons/ButtonStickyPostAd';
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,4 +1,4 @@
-import Carousel from '@/app/components/slider/carousel';
+import Carousel from '@/app/components/slider/Carousel';
 // import Slider from '@/app/components/slider/slider';
 import React from 'react';
 

@@ -1,4 +1,4 @@
-import ListingActions from '@/app/components/listingActions/listingActions';
+import ListingActions from '@/app/components/listing-actions/ListingActions';
 import React from 'react';
 
 function Listing() {
